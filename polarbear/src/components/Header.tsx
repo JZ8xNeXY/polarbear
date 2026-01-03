@@ -21,9 +21,9 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const menuItems = [
-    { label: 'ホッキョクグマについて', href: '#about' },
-    { label: '脅威', href: '#threats' },
-    { label: '私たちにできること', href: '#action' },
+    { label: '概要', href: '#about' },
+    { label: '現状と課題', href: '#threats' },
+    { label: 'できること', href: '#action' },
   ]
 
   const handleMenuToggle = () => {
@@ -36,7 +36,15 @@ export default function Header() {
 
   return (
     <>
-      <AppBar position="sticky" sx={{ backgroundColor: 'white', color: 'primary.main' }}>
+      <AppBar
+        position="sticky"
+        sx={{
+          backgroundColor: 'rgba(255,255,255,0.92)',
+          backdropFilter: 'blur(12px)',
+          color: '#1b4566',
+          borderBottom: '1px solid rgba(47,143,212,0.15)',
+        }}
+      >
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: 700 }}>
             ホッキョクグマ保護
@@ -85,4 +93,3 @@ export default function Header() {
     </>
   )
 }
-

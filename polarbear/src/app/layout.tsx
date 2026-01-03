@@ -30,6 +30,9 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <body className={`${notoSans.variable} ${notoSerif.variable}`} suppressHydrationWarning>
+        <a className="skip-link" href="#main">
+          本文へスキップ
+        </a>
         <MuiThemeProvider>{children}</MuiThemeProvider>
       </body>
     </html>
