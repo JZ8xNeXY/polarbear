@@ -2,6 +2,7 @@
 
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
+import EmotionCacheProvider from '@/lib/emotion-cache'
 import theme from '@/app/theme'
 
 export default function MuiThemeProvider({
@@ -10,10 +11,11 @@ export default function MuiThemeProvider({
   children: React.ReactNode
 }) {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      {children}
-    </ThemeProvider>
+    <EmotionCacheProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        {children}
+      </ThemeProvider>
+    </EmotionCacheProvider>
   )
 }
-
