@@ -27,7 +27,6 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import Grid from '@mui/material/GridLegacy'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 
@@ -263,7 +262,10 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            style={{ objectFit: 'cover' }}
+            style={{
+              objectFit: 'cover',
+              filter: 'saturate(0.9) contrast(1.05) brightness(0.95) hue-rotate(-8deg)',
+            }}
             aria-hidden
           />
         </Box>
@@ -276,6 +278,19 @@ export default function Home() {
             zIndex: 1,
           }}
         />
+        <Box
+          sx={{
+            position: 'absolute',
+            inset: 0,
+            background:
+              'radial-gradient(1200px 420px at 15% 10%, rgba(124,214,255,0.35) 0%, rgba(124,214,255,0) 70%), radial-gradient(900px 320px at 80% 5%, rgba(123,237,190,0.25) 0%, rgba(123,237,190,0) 65%)',
+            mixBlendMode: 'screen',
+            opacity: 0.7,
+            zIndex: 1,
+            pointerEvents: 'none',
+          }}
+        />
+        <Box className="ice-drift" />
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2 }}>
           <Stack
             spacing={{ xs: 3, md: 4 }}
@@ -385,32 +400,37 @@ export default function Home() {
               北極圏の海氷があるからこそ成り立つ生活。氷の減少は食料確保や子育てに直結します。
             </Typography>
           </Stack>
-          <Grid container spacing={3}>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
+              gap: 3,
+            }}
+          >
             {aboutItems.map((item) => (
-              <Grid item xs={12} md={4} key={item.title}>
-                <Card
-                  sx={{
-                    bgcolor: 'var(--glass)',
-                    border: '1px solid var(--glass-border)',
-                    borderRadius: 4,
-                    boxShadow: 'var(--glass-shadow)',
-                    backdropFilter: 'blur(16px)',
-                    height: '100%',
-                  }}
-                >
-                  <CardContent>
-                    <Stack spacing={2}>
-                      {item.icon}
-                      <Typography variant="h3" sx={{ fontSize: '1.5rem' }}>
-                        {item.title}
-                      </Typography>
-                      <Typography sx={{ color: '#304357' }}>{item.body}</Typography>
-                    </Stack>
-                  </CardContent>
-                </Card>
-              </Grid>
+              <Card
+                key={item.title}
+                sx={{
+                  bgcolor: 'var(--glass)',
+                  border: '1px solid var(--glass-border)',
+                  borderRadius: 4,
+                  boxShadow: 'var(--glass-shadow)',
+                  backdropFilter: 'blur(16px)',
+                  height: '100%',
+                }}
+              >
+                <CardContent>
+                  <Stack spacing={2}>
+                    {item.icon}
+                    <Typography variant="h3" sx={{ fontSize: '1.5rem' }}>
+                      {item.title}
+                    </Typography>
+                    <Typography sx={{ color: '#304357' }}>{item.body}</Typography>
+                  </Stack>
+                </CardContent>
+              </Card>
             ))}
-          </Grid>
+          </Box>
         </Container>
       </Box>
 
@@ -434,84 +454,98 @@ export default function Home() {
         }}
       >
         <Container maxWidth="lg">
-          <Grid container spacing={5} alignItems="center" sx={{ mb: 8 }}>
-            <Grid item xs={12} md={6}>
-              <Card
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: { xs: 'column', md: 'row' },
+              gap: 5,
+              alignItems: 'stretch',
+              mb: 8,
+            }}
+          >
+            <Card
+              sx={{
+                flex: 1,
+                bgcolor: 'rgba(255, 241, 232, 0.85)',
+                borderRadius: 5,
+                border: '1px solid rgba(231,111,81,0.35)',
+                boxShadow: 'var(--glass-shadow)',
+                backdropFilter: 'blur(12px)',
+              }}
+            >
+              <CardContent sx={{ p: 5 }}>
+                <Stack spacing={3}>
+                  <TrendingDown sx={{ fontSize: 56, color: '#e76f51' }} />
+                  <Typography variant="h2" sx={{ fontSize: '3rem' }}>
+                    海氷は約40%減少
+                  </Typography>
+                  <Typography sx={{ color: '#7a5b51', fontSize: '1.2rem' }}>
+                    夏季の海氷は過去40年で大幅に縮小。狩りの場が失われています。
+                  </Typography>
+                </Stack>
+              </CardContent>
+            </Card>
+            <Box
+              sx={{
+                position: 'relative',
+                flex: 1,
+                borderRadius: 5,
+                overflow: 'hidden',
+                minHeight: 360,
+                border: '1px solid var(--glass-border)',
+                boxShadow: 'var(--glass-shadow)',
+              }}
+            >
+              <Image
+                src="/images/hans-jurgen-mager-Ec_ygZTIv_0-unsplash.jpg"
+                alt="氷が割れる北極のイメージ"
+                fill
+                sizes="(min-width: 900px) 50vw, 100vw"
+                style={{
+                  objectFit: 'cover',
+                  filter: 'saturate(0.9) contrast(1.05) brightness(0.95) hue-rotate(-8deg)',
+                }}
+              />
+              <Box
                 sx={{
-                  bgcolor: 'rgba(255, 241, 232, 0.85)',
-                  borderRadius: 5,
-                  border: '1px solid rgba(231,111,81,0.35)',
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.35) 100%)',
+                }}
+              />
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
+              gap: 3,
+            }}
+          >
+            {threatCards.map((item) => (
+              <Card
+                key={item.title}
+                sx={{
+                  bgcolor: 'var(--glass)',
+                  borderRadius: 4,
+                  border: '1px solid var(--glass-border)',
                   boxShadow: 'var(--glass-shadow)',
-                  backdropFilter: 'blur(12px)',
+                  backdropFilter: 'blur(14px)',
+                  height: '100%',
                 }}
               >
-                <CardContent sx={{ p: 5 }}>
-                  <Stack spacing={3}>
-                    <TrendingDown sx={{ fontSize: 56, color: '#e76f51' }} />
-                    <Typography variant="h2" sx={{ fontSize: '3rem' }}>
-                      海氷は約40%減少
+                <CardContent>
+                  <Stack spacing={2}>
+                    {item.icon}
+                    <Typography variant="h3" sx={{ fontSize: '1.5rem' }}>
+                      {item.title}
                     </Typography>
-                    <Typography sx={{ color: '#7a5b51', fontSize: '1.2rem' }}>
-                      夏季の海氷は過去40年で大幅に縮小。狩りの場が失われています。
-                    </Typography>
+                    <Typography sx={{ color: '#304357' }}>{item.body}</Typography>
                   </Stack>
                 </CardContent>
               </Card>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Box
-                sx={{
-                  position: 'relative',
-                  borderRadius: 5,
-                  overflow: 'hidden',
-                  minHeight: 360,
-                  border: '1px solid var(--glass-border)',
-                  boxShadow: 'var(--glass-shadow)',
-                }}
-              >
-                <Image
-                  src="/images/hans-jurgen-mager-Ec_ygZTIv_0-unsplash.jpg"
-                  alt="氷が割れる北極のイメージ"
-                  fill
-                  sizes="(min-width: 900px) 50vw, 100vw"
-                  style={{ objectFit: 'cover' }}
-                />
-                <Box
-                  sx={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.35) 100%)',
-                  }}
-                />
-              </Box>
-            </Grid>
-          </Grid>
-          <Grid container spacing={3}>
-            {threatCards.map((item) => (
-              <Grid item xs={12} md={4} key={item.title}>
-                <Card
-                  sx={{
-                    bgcolor: 'var(--glass)',
-                    borderRadius: 4,
-                    border: '1px solid var(--glass-border)',
-                    boxShadow: 'var(--glass-shadow)',
-                    backdropFilter: 'blur(14px)',
-                    height: '100%',
-                  }}
-                >
-                  <CardContent>
-                    <Stack spacing={2}>
-                      {item.icon}
-                      <Typography variant="h3" sx={{ fontSize: '1.5rem' }}>
-                        {item.title}
-                      </Typography>
-                      <Typography sx={{ color: '#304357' }}>{item.body}</Typography>
-                    </Stack>
-                  </CardContent>
-                </Card>
-              </Grid>
             ))}
-          </Grid>
+          </Box>
         </Container>
       </Box>
 
@@ -541,102 +575,116 @@ export default function Home() {
               数字で見ると、変化のスピードがより鮮明にわかります。
             </Typography>
           </Stack>
-          <Grid container spacing={{ xs: 2.5, md: 3 }}>
-            <Grid item xs={12} md={6}>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
+              gap: { xs: 2.5, md: 3 },
+            }}
+          >
+            <Box
+              sx={{
+                position: 'relative',
+                borderRadius: 5,
+                overflow: 'hidden',
+                minHeight: { xs: 240, sm: 280, md: 320 },
+                boxShadow: 'var(--glass-shadow)',
+              }}
+            >
+              <Image
+                src="/images/hans-jurgen-mager-qQWV91TTBrE-unsplash.jpg"
+                alt="親子のホッキョクグマ"
+                fill
+                sizes="(min-width: 900px) 50vw, 100vw"
+                style={{
+                  objectFit: 'cover',
+                  filter: 'saturate(0.9) contrast(1.05) brightness(0.95) hue-rotate(-8deg)',
+                }}
+              />
               <Box
                 sx={{
-                  position: 'relative',
-                  borderRadius: 5,
-                  overflow: 'hidden',
-                  minHeight: { xs: 240, sm: 280, md: 320 },
-                  boxShadow: 'var(--glass-shadow)',
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(180deg, rgba(10,20,30,0.1) 0%, rgba(10,20,30,0.9) 100%)',
+                  display: 'flex',
+                  alignItems: 'flex-end',
                 }}
               >
-                <Image
-                  src="/images/hans-jurgen-mager-qQWV91TTBrE-unsplash.jpg"
-                  alt="親子のホッキョクグマ"
-                  fill
-                  sizes="(min-width: 900px) 50vw, 100vw"
-                  style={{ objectFit: 'cover' }}
-                />
                 <Box
                   sx={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'linear-gradient(180deg, rgba(10,20,30,0.1) 0%, rgba(10,20,30,0.9) 100%)',
-                    display: 'flex',
-                    alignItems: 'flex-end',
+                    p: 4,
+                    bgcolor: 'rgba(7,11,18,0.55)',
+                    borderRadius: 3,
+                    mb: 3,
+                    ml: 3,
+                    border: '1px solid rgba(255,255,255,0.15)',
+                    maxWidth: 360,
                   }}
                 >
-                  <Box
-                    sx={{
-                      p: 4,
-                      bgcolor: 'rgba(7,11,18,0.55)',
-                      borderRadius: 3,
-                      mb: 3,
-                      ml: 3,
-                      border: '1px solid rgba(255,255,255,0.15)',
-                      maxWidth: 360,
-                    }}
+                  <Typography
+                    variant="h2"
+                    sx={{ color: '#eef6ff', fontSize: '2.5rem', textShadow: '0 6px 16px rgba(3,8,14,0.5)' }}
                   >
-                    <Typography variant="h2" sx={{  color: '#eef6ff',fontSize: '2.5rem', textShadow: '0 6px 16px rgba(3,8,14,0.5)' }}>
-                      約26,000頭
-                    </Typography>
-                    <Typography sx={{ color: '#eef6ff', textShadow: '0 6px 16px rgba(3,8,14,0.45)' }}>
-                      推定される現在の生息数
-                    </Typography>
-                  </Box>
+                    約26,000頭
+                  </Typography>
+                  <Typography sx={{ color: '#eef6ff', textShadow: '0 6px 16px rgba(3,8,14,0.45)' }}>
+                    推定される現在の生息数
+                  </Typography>
                 </Box>
               </Box>
-            </Grid>
-            <Grid item xs={12} md={6}>
+            </Box>
+            <Box
+              sx={{
+                position: 'relative',
+                borderRadius: 5,
+                overflow: 'hidden',
+                minHeight: { xs: 240, sm: 280, md: 320 },
+                boxShadow: 'var(--glass-shadow)',
+              }}
+            >
+              <Image
+                src="/images/isaac-demeester-W-r1PbcRB2c-unsplash.jpg"
+                alt="海氷の縮小イメージ"
+                fill
+                sizes="(min-width: 900px) 50vw, 100vw"
+                style={{
+                  objectFit: 'cover',
+                  filter: 'saturate(0.9) contrast(1.05) brightness(0.95) hue-rotate(-8deg)',
+                }}
+              />
               <Box
                 sx={{
-                  position: 'relative',
-                  borderRadius: 5,
-                  overflow: 'hidden',
-                  minHeight: { xs: 240, sm: 280, md: 320 },
-                  boxShadow: 'var(--glass-shadow)',
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(180deg, rgba(10,20,30,0.1) 0%, rgba(10,20,30,0.9) 100%)',
+                  display: 'flex',
+                  alignItems: 'flex-end',
                 }}
               >
-                <Image
-                  src="/images/isaac-demeester-W-r1PbcRB2c-unsplash.jpg"
-                  alt="海氷の縮小イメージ"
-                  fill
-                  sizes="(min-width: 900px) 50vw, 100vw"
-                  style={{ objectFit: 'cover' }}
-                />
                 <Box
                   sx={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'linear-gradient(180deg, rgba(10,20,30,0.1) 0%, rgba(10,20,30,0.9) 100%)',
-                    display: 'flex',
-                    alignItems: 'flex-end',
+                    p: 4,
+                    bgcolor: 'rgba(7,11,18,0.55)',
+                    borderRadius: 3,
+                    mb: 3,
+                    ml: 3,
+                    border: '1px solid rgba(255,255,255,0.15)',
+                    maxWidth: 360,
                   }}
                 >
-                  <Box
-                    sx={{
-                      p: 4,
-                      bgcolor: 'rgba(7,11,18,0.55)',
-                      borderRadius: 3,
-                      mb: 3,
-                      ml: 3,
-                      border: '1px solid rgba(255,255,255,0.15)',
-                      maxWidth: 360,
-                    }}
+                  <Typography
+                    variant="h2"
+                    sx={{ color: '#eef6ff', fontSize: '2.5rem', textShadow: '0 6px 16px rgba(3,8,14,0.5)' }}
                   >
-                    <Typography variant="h2" sx={{  color: '#eef6ff',fontSize: '2.5rem', textShadow: '0 6px 16px rgba(3,8,14,0.5)' }}>
-                      +1か月
-                    </Typography>
-                    <Typography sx={{ color: '#eef6ff', textShadow: '0 6px 16px rgba(3,8,14,0.45)' }}>
-                      10年で延びた海氷のない期間
-                    </Typography>
-                  </Box>
+                    +1か月
+                  </Typography>
+                  <Typography sx={{ color: '#eef6ff', textShadow: '0 6px 16px rgba(3,8,14,0.45)' }}>
+                    10年で延びた海氷のない期間
+                  </Typography>
                 </Box>
               </Box>
-            </Grid>
-          </Grid>
+            </Box>
+          </Box>
         </Container>
       </Box>
 
@@ -673,41 +721,41 @@ export default function Home() {
                 <Typography variant="h2" sx={{ fontSize: { xs: '2.4rem', md: '3.2rem' } }}>
                   なぜ今、守る必要があるのか
                 </Typography>
-                <Grid container spacing={3}>
-                  <Grid item xs={12} md={4}>
-                    <Stack spacing={1} alignItems="center">
-                      <Public sx={{ fontSize: 48, color: '#2f8fd4' }} />
-                      <Typography variant="h3" sx={{ fontSize: '1.4rem' }}>
-                        生態系の頂点
-                      </Typography>
-                      <Typography sx={{ color: '#304357' }}>
-                        北極のバランスを保つ重要な存在です。
-                      </Typography>
-                    </Stack>
-                  </Grid>
-                  <Grid item xs={12} md={4}>
-                    <Stack spacing={1} alignItems="center">
-                      <Thermostat sx={{ fontSize: 48, color: '#2f8fd4' }} />
-                      <Typography variant="h3" sx={{ fontSize: '1.4rem' }}>
-                        気候変動の指標
-                      </Typography>
-                      <Typography sx={{ color: '#304357' }}>
-                        変化のスピードを示す警告サインになります。
-                      </Typography>
-                    </Stack>
-                  </Grid>
-                  <Grid item xs={12} md={4}>
-                    <Stack spacing={1} alignItems="center">
-                      <AccessTime sx={{ fontSize: 48, color: '#2f8fd4' }} />
-                      <Typography variant="h3" sx={{ fontSize: '1.4rem' }}>
-                        今の10年が鍵
-                      </Typography>
-                      <Typography sx={{ color: '#304357' }}>
-                        対策の成否を左右する重要な期間です。
-                      </Typography>
-                    </Stack>
-                  </Grid>
-                </Grid>
+                <Box
+                  sx={{
+                    display: 'grid',
+                    gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
+                    gap: 3,
+                  }}
+                >
+                  <Stack spacing={1} alignItems="center">
+                    <Public sx={{ fontSize: 48, color: '#2f8fd4' }} />
+                    <Typography variant="h3" sx={{ fontSize: '1.4rem' }}>
+                      生態系の頂点
+                    </Typography>
+                    <Typography sx={{ color: '#304357' }}>
+                      北極のバランスを保つ重要な存在です。
+                    </Typography>
+                  </Stack>
+                  <Stack spacing={1} alignItems="center">
+                    <Thermostat sx={{ fontSize: 48, color: '#2f8fd4' }} />
+                    <Typography variant="h3" sx={{ fontSize: '1.4rem' }}>
+                      気候変動の指標
+                    </Typography>
+                    <Typography sx={{ color: '#304357' }}>
+                      変化のスピードを示す警告サインになります。
+                    </Typography>
+                  </Stack>
+                  <Stack spacing={1} alignItems="center">
+                    <AccessTime sx={{ fontSize: 48, color: '#2f8fd4' }} />
+                    <Typography variant="h3" sx={{ fontSize: '1.4rem' }}>
+                      今の10年が鍵
+                    </Typography>
+                    <Typography sx={{ color: '#304357' }}>
+                      対策の成否を左右する重要な期間です。
+                    </Typography>
+                  </Stack>
+                </Box>
               </Stack>
             </CardContent>
           </Card>
@@ -741,32 +789,37 @@ export default function Home() {
               行動は小さくても、積み重なれば未来を変えられます。
             </Typography>
           </Stack>
-          <Grid container spacing={3}>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
+              gap: 3,
+            }}
+          >
             {actionItems.map((item) => (
-              <Grid item xs={12} md={6} key={item.title}>
-                <Card
-                  sx={{
-                    bgcolor: 'var(--glass)',
-                    borderRadius: 5,
-                    border: '1px solid var(--glass-border)',
-                    boxShadow: 'var(--glass-shadow)',
-                    backdropFilter: 'blur(14px)',
-                    height: '100%',
-                  }}
-                >
-                  <CardContent sx={{ p: 4 }}>
-                    <Stack spacing={2}>
-                      {item.icon}
-                      <Typography variant="h3" sx={{ fontSize: '1.6rem' }}>
-                        {item.title}
-                      </Typography>
-                      <Typography sx={{ color: '#304357' }}>{item.body}</Typography>
-                    </Stack>
-                  </CardContent>
-                </Card>
-              </Grid>
+              <Card
+                key={item.title}
+                sx={{
+                  bgcolor: 'var(--glass)',
+                  borderRadius: 5,
+                  border: '1px solid var(--glass-border)',
+                  boxShadow: 'var(--glass-shadow)',
+                  backdropFilter: 'blur(14px)',
+                  height: '100%',
+                }}
+              >
+                <CardContent sx={{ p: 4 }}>
+                  <Stack spacing={2}>
+                    {item.icon}
+                    <Typography variant="h3" sx={{ fontSize: '1.6rem' }}>
+                      {item.title}
+                    </Typography>
+                    <Typography sx={{ color: '#304357' }}>{item.body}</Typography>
+                  </Stack>
+                </CardContent>
+              </Card>
             ))}
-          </Grid>
+          </Box>
         </Container>
       </Box>
 
@@ -802,7 +855,10 @@ export default function Home() {
               alt="北極のコミュニティを象徴するイメージ"
               fill
               sizes="(min-width: 900px) 720px, 100vw"
-              style={{ objectFit: 'cover' }}
+              style={{
+                objectFit: 'cover',
+                filter: 'saturate(0.9) contrast(1.05) brightness(0.95) hue-rotate(-8deg)',
+              }}
             />
             <Box
               sx={{

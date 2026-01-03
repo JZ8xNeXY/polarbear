@@ -13,6 +13,10 @@ body {
 body {
   color: #0b1b2b;
   background: radial-gradient(circle at top, #ffffff 0%, #f4f9ff 35%, #e6f1ff 100%);
+  background-image:
+    radial-gradient(circle at top, #ffffff 0%, #f4f9ff 35%, #e6f1ff 100%),
+    var(--ice-texture);
+  background-blend-mode: normal, multiply;
 }
 
 :root {
@@ -24,6 +28,7 @@ body {
   --glass-strong: rgba(255, 255, 255, 0.82);
   --glass-border: rgba(47, 143, 212, 0.18);
   --glass-shadow: 0 18px 50px rgba(12, 34, 60, 0.12);
+  --ice-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Crect width='320' height='320' fill='none'/%3E%3Cg stroke='%2399c8ef' stroke-opacity='0.18' stroke-width='1'%3E%3Cpath d='M10 40 L80 10 L150 40 L220 20 L300 60'/%3E%3Cpath d='M30 120 L110 90 L170 120 L240 100 L310 140'/%3E%3Cpath d='M0 200 L60 180 L140 210 L210 190 L280 230'/%3E%3Cpath d='M20 280 L90 250 L160 280 L230 260 L300 300'/%3E%3C/g%3E%3Cg stroke='%23b8ddf5' stroke-opacity='0.22' stroke-width='1'%3E%3Cpath d='M40 20 L70 80 L30 140 L90 200'/%3E%3Cpath d='M180 30 L210 90 L170 150 L230 210'/%3E%3Cpath d='M260 50 L290 110 L250 170 L300 230'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 a {
@@ -53,6 +58,33 @@ button:focus-visible {
 
 .skip-link:focus-visible {
   transform: translateY(0);
+}
+
+.ice-drift {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.55) 0 2px, transparent 3px),
+    radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.45) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.35) 0 1px, transparent 3px),
+    radial-gradient(circle at 85% 70%, rgba(255, 255, 255, 0.4) 0 1.5px, transparent 3px);
+  background-size: 280px 280px, 220px 220px, 180px 180px, 240px 240px;
+  animation: ice-drift 18s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes ice-drift {
+  0% {
+    background-position: 0 0, 40px 60px, 120px 20px, 80px 140px;
+  }
+  50% {
+    background-position: 40px 120px, 80px 160px, 180px 120px, 140px 220px;
+  }
+  100% {
+    background-position: 80px 240px, 120px 260px, 240px 220px, 200px 320px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
