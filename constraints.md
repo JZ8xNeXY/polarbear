@@ -29,4 +29,3 @@
 
 - モダンブラウザ（Chrome, Firefox, Safari, Edgeの最新2バージョン）
 - IE11は非対応
-
