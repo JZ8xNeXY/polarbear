@@ -87,9 +87,6 @@ export default function ThreatSection() {
             </Card>
           ))}
         </Box>
-        <Typography sx={{ color: '#2f4257', fontSize: '0.95rem', mt: 3 }}>
-          エネルギー収支（食べて得る力と、移動や生活で使う力の差）が崩れるほど、状況は厳しくなります。
-        </Typography>
       </Container>
     </Box>
   )

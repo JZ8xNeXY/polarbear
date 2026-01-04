@@ -50,7 +50,7 @@ export default function DataSection() {
                   +1か月
                 </Typography>
                 <Typography sx={styles.dataStatLabel}>
-                  海氷のない期間が伸びると不利。体重や繁殖への負荷が増えます。
+                  海氷のない期間が伸びるほど不利になります。体重や繁殖への負荷が増えます。
                 </Typography>
               </Box>
             </Box>

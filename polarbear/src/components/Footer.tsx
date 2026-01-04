@@ -15,7 +15,7 @@ export default function Footer() {
     >
       <Container maxWidth="lg">
         <Typography variant="body2" align="center">
-          © {new Date().getFullYear()} ホッキョクグマ保護プロジェクト
+          © {new Date().getFullYear()} ホッキョクグマを守ろう
         </Typography>
         <Typography variant="body2" align="center" sx={{ mt: 1 }}>
           このサイトはホッキョクグマの環境保護を目的としています

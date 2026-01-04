@@ -34,9 +34,6 @@ export default function HeroSection() {
             海氷は、ホッキョクグマにとって「狩りの足場」です。
             その“氷の季節”が短くなるほど、生きる条件は厳しくなっていきます。
           </Typography>
-          <Typography sx={styles.heroNote}>
-            このサイトでは、海氷と個体群（地域ごとのグループ）のデータから、現状と行動を整理します。
-          </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={styles.heroButtons}>
             <Button
               href="#threats"

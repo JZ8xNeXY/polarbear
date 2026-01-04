@@ -44,7 +44,7 @@ export default function AboutSection() {
             海氷とともに生きる
           </Typography>
           <Typography sx={styles.aboutLead}>
-            ホッキョクグマは、海氷の上でアザラシを狩って暮らす“海のクマ”。大切なのは「寒さ」そのものではなく、海氷がいつ・どこに・どれだけ残るかです。
+            ホッキョクグマは、海氷の上でアザラシを狩って暮らす“海のクマ”です。大切なのは「寒さ」そのものではなく、海氷がいつ・どこに・どれだけ残るかです。
           </Typography>
         </Stack>
         <Box sx={styles.aboutGrid}>

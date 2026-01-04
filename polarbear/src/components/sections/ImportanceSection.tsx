@@ -7,7 +7,7 @@ import styles from '@/app/page.style'
 export default function ImportanceSection() {
   return (
     <Box component="section" sx={styles.importanceSection}>
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Card sx={styles.importanceCard}>
           <CardContent sx={styles.importanceCardContent}>
             <Stack spacing={4} alignItems="center" textAlign="center">
@@ -31,7 +31,7 @@ export default function ImportanceSection() {
                     北極は地球全体に関係する
                   </Typography>
                   <Typography sx={styles.importanceItemText}>
-                    氷が減ると反射が弱まり、さらに温まりやすくなります。（アルベド：光を反射する性質）
+                    氷が減ると反射が弱まり、さらに温まりやすくなります。
                   </Typography>
                 </Stack>
                 <Stack spacing={1} alignItems="center">

@@ -49,7 +49,7 @@ const styles: Record<string, SxProps<Theme>> = {
     textAlign: { xs: 'center', md: 'left' },
   },
   heroChip: {
-    bgcolor: 'rgba(124,214,255,0.2)',
+    bgcolor: 'white',
     color: 'var(--accent-ice)',
     border: '1px solid rgba(47,143,212,0.3)',
     width: 'fit-content',
@@ -419,6 +419,7 @@ const styles: Record<string, SxProps<Theme>> = {
   },
   actionCardBody: {
     color: '#304357',
+    whiteSpace: 'pre-line',
   },
   actionIconChipGreen: {
     width: 66,
