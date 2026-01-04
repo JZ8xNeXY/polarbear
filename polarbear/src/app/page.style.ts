@@ -105,7 +105,7 @@ const styles: Record<string, SxProps<Theme>> = {
     },
   },
   aboutIntro: {
-    maxWidth: 720,
+    maxWidth: '100%',
     mb: 6,
   },
   aboutTitle: {
