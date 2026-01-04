@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { KeyboardArrowDown } from '@mui/icons-material'
 import { Box, Button, Chip, Container, Stack, Typography } from '@mui/material'
-import styles from '@/app/page.style'
+import styles, { imageFilterStyle } from '@/app/page.style'
 
 export default function HeroSection() {
   return (
@@ -15,10 +15,7 @@ export default function HeroSection() {
           fill
           priority
           sizes="100vw"
-          style={{
-            objectFit: 'cover',
-            filter: 'saturate(0.9) contrast(1.05) brightness(0.95) hue-rotate(-8deg)',
-          }}
+          style={imageFilterStyle}
           aria-hidden
         />
       </Box>
@@ -31,11 +28,14 @@ export default function HeroSection() {
           <Typography variant="h1" sx={styles.heroTitle}>
             ホッキョクグマを守るために
             <br />
-            いま知ることから始めよう
+            いま、知ることから始めよう
           </Typography>
           <Typography sx={styles.heroLead}>
-            ホッキョクグマは北極の海氷に依存する生き物。氷が減ることで食料や
-            子育ての場が失われています。
+            海氷は、ホッキョクグマにとって「狩りの足場」です。
+            その“氷の季節”が短くなるほど、生きる条件は厳しくなっていきます。
+          </Typography>
+          <Typography sx={styles.heroNote}>
+            このサイトでは、海氷と個体群（地域ごとのグループ）のデータから、現状と行動を整理します。
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={styles.heroButtons}>
             <Button
@@ -46,7 +46,7 @@ export default function HeroSection() {
               sx={styles.heroPrimaryButton}
               fullWidth
             >
-              いま起きている変化
+              現状を知る
             </Button>
             <Button
               href="#action"

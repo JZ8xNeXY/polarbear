@@ -1,4 +1,10 @@
+import type { CSSProperties } from 'react'
 import type { SxProps, Theme } from '@mui/material/styles'
+
+export const imageFilterStyle: CSSProperties = {
+  objectFit: 'cover',
+  filter: 'saturate(0.9) contrast(1.05) brightness(0.95) hue-rotate(-8deg)',
+}
 
 const styles: Record<string, SxProps<Theme>> = {
   main: {
@@ -61,6 +67,10 @@ const styles: Record<string, SxProps<Theme>> = {
     lineHeight: 1.7,
     color: '#f1f6ff',
     textShadow: '0 10px 24px rgba(7,11,18,0.35)',
+  },
+  heroNote: {
+    fontSize: { xs: '0.9rem', md: '1rem' },
+    color: 'rgba(239, 246, 255, 0.82)',
   },
   heroButtons: {
     alignItems: { xs: 'stretch', sm: 'center' },

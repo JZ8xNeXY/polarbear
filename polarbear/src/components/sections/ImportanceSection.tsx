@@ -13,34 +13,34 @@ export default function ImportanceSection() {
             <Stack spacing={4} alignItems="center" textAlign="center">
               <FlashOn sx={styles.importanceIcon} />
               <Typography variant="h2" sx={styles.importanceTitle}>
-                なぜ今、守る必要があるのか
+                なぜ守るのか
               </Typography>
               <Box sx={styles.importanceGrid}>
                 <Stack spacing={1} alignItems="center">
                   <Public sx={styles.importanceItemIcon} />
                   <Typography variant="h3" sx={styles.importanceItemTitle}>
-                    生態系の頂点
+                    北極の変化を最前線で受ける存在
                   </Typography>
                   <Typography sx={styles.importanceItemText}>
-                    北極のバランスを保つ重要な存在です。
+                    海氷の変化が、そのまま生存条件になります。
                   </Typography>
                 </Stack>
                 <Stack spacing={1} alignItems="center">
                   <Thermostat sx={styles.importanceItemIcon} />
                   <Typography variant="h3" sx={styles.importanceItemTitle}>
-                    気候変動の指標
+                    北極は地球全体に関係する
                   </Typography>
                   <Typography sx={styles.importanceItemText}>
-                    変化のスピードを示す警告サインになります。
+                    氷が減ると反射が弱まり、さらに温まりやすくなります。（アルベド：光を反射する性質）
                   </Typography>
                 </Stack>
                 <Stack spacing={1} alignItems="center">
                   <AccessTime sx={styles.importanceItemIcon} />
                   <Typography variant="h3" sx={styles.importanceItemTitle}>
-                    今の10年が鍵
+                    保護は連鎖する
                   </Typography>
                   <Typography sx={styles.importanceItemText}>
-                    対策の成否を左右する重要な期間です。
+                    知る人が増えるほど、支援と意思決定が変わります。
                   </Typography>
                 </Stack>
               </Box>

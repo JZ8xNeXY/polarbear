@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { TrendingDown, TrendingUp, Waves } from '@mui/icons-material'
 import { Box, Card, CardContent, Container, Stack, Typography } from '@mui/material'
-import styles from '@/app/page.style'
+import styles, { imageFilterStyle } from '@/app/page.style'
 
 const threatCards = [
   {
@@ -12,8 +12,8 @@ const threatCards = [
         <TrendingDown sx={styles.threatIconWarm} />
       </Box>
     ),
-    title: '海氷の減少',
-    body: '40年で海氷面積が大幅に減り、狩りの機会が縮小しています。',
+    title: '狩りが難しくなる',
+    body: '海氷が少ないと、アザラシに近づきにくくなります。',
   },
   {
     icon: (
@@ -21,8 +21,8 @@ const threatCards = [
         <Waves sx={styles.threatIconCool} />
       </Box>
     ),
-    title: '長距離の移動',
-    body: '氷が離れることで、子グマには命がけの泳ぎが必要に。',
+    title: '移動の負担が増える',
+    body: '泳ぐ距離が増え、事故のリスクも高まります。',
   },
   {
     icon: (
@@ -30,8 +30,8 @@ const threatCards = [
         <TrendingUp sx={styles.threatIconSun} />
       </Box>
     ),
-    title: '個体数の減少',
-    body: '2050年までに30%の減少が予測されています。',
+    title: '食べられない期間が伸びる',
+    body: '体重が落ちやすくなり、繁殖の余力も削られます。',
   },
 ]
 
@@ -39,6 +39,14 @@ export default function ThreatSection() {
   return (
     <Box component="section" id="threats" sx={styles.threatSection}>
       <Container maxWidth="lg">
+        <Stack spacing={2} sx={{ textAlign: 'center', mb: 6 }}>
+          <Typography variant="h2" sx={{ fontSize: { xs: '2.6rem', md: '3.6rem' } }}>
+            足場の時間が減ると、暮らしが揺らぐ
+          </Typography>
+          <Typography sx={{ color: '#2f4257' }}>
+            脅威の中心は「気温」そのものより、狩りの足場になる海氷が使える期間です。期間が短くなるほど、狩り・体重・繁殖の余力が削られていきます。
+          </Typography>
+        </Stack>
         <Box sx={styles.threatTopRow}>
           <Card sx={styles.threatStatCard}>
             <CardContent sx={styles.threatStatContent}>
@@ -59,10 +67,7 @@ export default function ThreatSection() {
               alt="氷が割れる北極のイメージ"
               fill
               sizes="(min-width: 900px) 50vw, 100vw"
-              style={{
-                objectFit: 'cover',
-                filter: 'saturate(0.9) contrast(1.05) brightness(0.95) hue-rotate(-8deg)',
-              }}
+              style={imageFilterStyle}
             />
             <Box sx={styles.threatImageOverlay} />
           </Box>
@@ -82,6 +87,9 @@ export default function ThreatSection() {
             </Card>
           ))}
         </Box>
+        <Typography sx={{ color: '#2f4257', fontSize: '0.95rem', mt: 3 }}>
+          エネルギー収支（食べて得る力と、移動や生活で使う力の差）が崩れるほど、状況は厳しくなります。
+        </Typography>
       </Container>
     </Box>
   )

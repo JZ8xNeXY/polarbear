@@ -11,8 +11,9 @@ const aboutItems = [
         <AcUnit sx={styles.aboutIcon} />
       </Box>
     ),
-    title: '生息地は北極圏',
-    body: '海氷の上で狩りをし、春から夏にかけて子育てします。',
+    title: 'どこにいる？',
+    body:
+      'カナダ、グリーンランド、ノルウェー、ロシア、アラスカ周辺に分布しています。地域ごとに状況が異なるため、通常は個体群（地域単位）で見守られています。',
   },
   {
     icon: (
@@ -20,8 +21,8 @@ const aboutItems = [
         <Restaurant sx={styles.aboutIcon} />
       </Box>
     ),
-    title: '主食はアザラシ',
-    body: '氷があることで獲物に近づける、生態の要となる環境です。',
+    title: 'どうやって食べる？',
+    body: '主にアザラシを食べます。海氷を足場に、氷の上から静かに狩りをします。',
   },
   {
     icon: (
@@ -29,8 +30,8 @@ const aboutItems = [
         <Public sx={styles.aboutIcon} />
       </Box>
     ),
-    title: '北極の指標種',
-    body: 'ホッキョクグマの変化は、地球全体の変化のサインです。',
+    title: '子育ては？',
+    body: '母グマは雪の中に巣穴をつくって出産します。子グマは数年かけて、生き方を学びます。',
   },
 ]
 
@@ -40,10 +41,10 @@ export default function AboutSection() {
       <Container maxWidth="lg">
         <Stack spacing={3} sx={styles.aboutIntro}>
           <Typography variant="h2" sx={styles.aboutTitle}>
-            1分でわかるホッキョクグマ
+            海氷とともに生きる
           </Typography>
           <Typography sx={styles.aboutLead}>
-            北極圏の海氷があるからこそ成り立つ生活。氷の減少は食料確保や子育てに直結します。
+            ホッキョクグマは、海氷の上でアザラシを狩って暮らす“海のクマ”。大切なのは「寒さ」そのものではなく、海氷がいつ・どこに・どれだけ残るかです。
           </Typography>
         </Stack>
         <Box sx={styles.aboutGrid}>

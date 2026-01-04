@@ -11,8 +11,8 @@ const actionItems = [
         <NaturePeople sx={styles.actionIconGreen} />
       </Box>
     ),
-    title: 'CO2を減らす',
-    body: '電力や移動手段の見直しで排出削減に参加できます。',
+    title: '排出を減らす（原因に近い）',
+    body: '電力・移動・断熱など、効果が大きいところから。（気候負荷：生活が生む温室効果ガスの負担）',
   },
   {
     icon: (
@@ -20,8 +20,8 @@ const actionItems = [
         <VolunteerActivism sx={styles.actionIconBlue} />
       </Box>
     ),
-    title: '支援する',
-    body: '保護団体への寄付や継続支援が現場の力になります。',
+    title: '保護活動を支援する（現場を支える）',
+    body: '調査・保全は継続が重要です。信頼できる団体を、継続的に支える選択肢があります。',
   },
   {
     icon: (
@@ -29,8 +29,8 @@ const actionItems = [
         <Campaign sx={styles.actionIconSteel} />
       </Box>
     ),
-    title: '声を広げる',
-    body: 'SNSや地域でのシェアが、行動の輪を広げます。',
+    title: '伝える（輪を広げる）',
+    body: '「海氷＝狩りの足場」という一言だけでも共有すると、理解が進みます。',
   },
   {
     icon: (
@@ -38,8 +38,8 @@ const actionItems = [
         <MenuBook sx={styles.actionIconAmber} />
       </Box>
     ),
-    title: '学び伝える',
-    body: '子どもや仲間に現状を伝え、次世代の意識を育てます。',
+    title: '学ぶ（判断の質を上げる）',
+    body: 'データの見方を少し知るだけで、情報に振り回されにくくなります。',
   },
 ]
 
@@ -49,10 +49,10 @@ export default function ActionSection() {
       <Container maxWidth="lg">
         <Stack spacing={2} sx={styles.actionHeader}>
           <Typography variant="h2" sx={styles.actionTitle}>
-            いま、できること
+            守るために、できること
           </Typography>
           <Typography sx={styles.actionLead}>
-            行動は小さくても、積み重なれば未来を変えられます。
+            知ることは始まりです。次は「原因に近い行動」と「現場を支える行動」を選べます。
           </Typography>
         </Stack>
         <Box sx={styles.actionGrid}>
