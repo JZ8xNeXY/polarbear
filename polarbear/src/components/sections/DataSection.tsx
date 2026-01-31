@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { Map } from '@mui/icons-material'
 import { Box, Container, Stack, Typography } from '@mui/material'
 import styles, { imageFilterStyle } from '@/app/page.style'
 
@@ -55,6 +56,29 @@ export default function DataSection() {
               </Box>
             </Box>
           </Box>
+        </Box>
+        <Box sx={styles.dataMapSection}>
+          <Stack direction="row" spacing={1} alignItems="center" justifyContent="center">
+            <Map sx={{ color: '#2f8fd4', fontSize: 32 }} />
+            <Typography variant="h3" sx={styles.dataMapTitle}>
+              生息域マップ
+            </Typography>
+          </Stack>
+          <Typography sx={styles.dataMapLead} textAlign="center">
+            ホッキョクグマは北極圏の5カ国（カナダ、ロシア、アメリカ、ノルウェー、グリーンランド/デンマーク）に分布し、19の個体群に分かれています。
+          </Typography>
+          <Box sx={styles.dataPopulationMapBox}>
+            <Image
+              src="/images/polar-bear-population-map.jpg"
+              alt="ホッキョクグマの19個体群分布図"
+              fill
+              sizes="(min-width: 900px) 900px, 100vw"
+              style={{ objectFit: 'contain' }}
+            />
+          </Box>
+          <Typography sx={styles.dataMapCaption}>
+            ※ 地図出典: WWF Global Arctic Programme (2025)。色は個体群の保全状態を示しています。
+          </Typography>
         </Box>
       </Container>
     </Box>

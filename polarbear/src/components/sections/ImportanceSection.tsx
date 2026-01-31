@@ -16,25 +16,29 @@ export default function ImportanceSection() {
                 なぜ守るのか
               </Typography>
               <Box sx={styles.importanceGrid}>
-                <Stack spacing={1} alignItems="center">
+                <Stack spacing={1.5} alignItems="center" sx={{ maxWidth: 280 }}>
                   <Public sx={styles.importanceItemIcon} />
                   <Typography variant="h3" sx={styles.importanceItemTitle}>
-                    北極の変化を最前線で受ける存在
+                    北極の変化を
+                    <br />
+                    最前線で受ける存在
                   </Typography>
                   <Typography sx={styles.importanceItemText}>
                     海氷の変化が、そのまま生存条件になります。
                   </Typography>
                 </Stack>
-                <Stack spacing={1} alignItems="center">
+                <Stack spacing={1.5} alignItems="center" sx={{ maxWidth: 280 }}>
                   <Thermostat sx={styles.importanceItemIcon} />
                   <Typography variant="h3" sx={styles.importanceItemTitle}>
-                    北極は地球全体に関係する
+                    北極は
+                    <br />
+                    地球全体に関係する
                   </Typography>
                   <Typography sx={styles.importanceItemText}>
                     氷が減ると反射が弱まり、さらに温まりやすくなります。
                   </Typography>
                 </Stack>
-                <Stack spacing={1} alignItems="center">
+                <Stack spacing={1.5} alignItems="center" sx={{ maxWidth: 280 }}>
                   <AccessTime sx={styles.importanceItemIcon} />
                   <Typography variant="h3" sx={styles.importanceItemTitle}>
                     保護は連鎖する
