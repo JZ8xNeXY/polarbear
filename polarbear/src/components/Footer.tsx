@@ -9,8 +9,13 @@ export default function Footer() {
       sx={{
         backgroundColor: 'primary.dark',
         color: 'white',
-        py: 4,
-        mt: 'auto',
+        position: 'fixed',
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 1000,
+        py: { xs: 2.5, md: 3 },
+        minHeight: { xs: 92, md: 104 },
       }}
     >
       <Container maxWidth="lg">
@@ -18,7 +23,7 @@ export default function Footer() {
           © {new Date().getFullYear()} ホッキョクグマを守ろう
         </Typography>
         <Typography variant="body2" align="center" sx={{ mt: 1 }}>
-          このサイトはホッキョクグマの環境保護を目的としています
+          このサイトはホッキョクグマを守るための情報をまとめています
         </Typography>
       </Container>
     </Box>

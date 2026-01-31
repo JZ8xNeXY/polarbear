@@ -11,8 +11,8 @@ const actionItems = [
         <NaturePeople sx={styles.actionIconGreen} />
       </Box>
     ),
-    title: '温室効果ガス排出量を減らす',
-    body: '電力・移動・断熱など、効果が大きいところから始められます。',
+    title: 'エネルギーの使い方を見直す',
+    body: '電力や移動、断熱など、できるところから始められます。',
   },
   {
     icon: (
@@ -20,8 +20,8 @@ const actionItems = [
         <VolunteerActivism sx={styles.actionIconBlue} />
       </Box>
     ),
-    title: '保護活動を支援する',
-    body: '調査・保全は継続が重要です。\n信頼できる団体を、継続的に支える選択肢があります。',
+    title: '現場の活動を支える',
+    body: '調査や保全は続けることが大切です。\n信頼できる団体を、無理のない範囲で支える方法もあります。',
   },
   {
     icon: (
@@ -29,8 +29,8 @@ const actionItems = [
         <Campaign sx={styles.actionIconSteel} />
       </Box>
     ),
-    title: '伝える',
-    body: '「海氷＝狩りの足場」という一言だけでも共有すると、理解が進みます。',
+    title: '誰かに伝える',
+    body: '「海氷は狩りの足場」という一言だけでも、伝わりやすくなります。',
   },
   {
     icon: (
@@ -38,7 +38,7 @@ const actionItems = [
         <MenuBook sx={styles.actionIconAmber} />
       </Box>
     ),
-    title: '学ぶ',
+    title: 'ゆっくり学ぶ',
     body: 'データの見方を少し知るだけで、情報に振り回されにくくなります。',
   },
 ]
@@ -49,10 +49,10 @@ export default function ActionSection() {
       <Container maxWidth="lg">
         <Stack spacing={2} sx={styles.actionHeader}>
           <Typography variant="h2" sx={styles.actionTitle}>
-            守るために、できること
+            今日からできること
           </Typography>
           <Typography sx={styles.actionLead}>
-            知ることは始まりです。次は「原因に近い行動」と「現場を支える行動」を選べます。
+            知ることは第一歩。次は「原因に近いところを減らす行動」と「現場を支える行動」から、できそうなものを選びましょう。
           </Typography>
         </Stack>
         <Box sx={styles.actionGrid}>

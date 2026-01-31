@@ -11,10 +11,10 @@ export default function DataSection() {
       <Container maxWidth="lg">
         <Stack spacing={2} sx={styles.dataHeader}>
           <Typography variant="h2" sx={styles.dataTitle}>
-            データで見る北極のいま
+            データで見る北極のようす
           </Typography>
           <Typography sx={styles.dataLead}>
-            まずは「全体のトレンド」と「地域差」を分けて見ていきます。数字の意味（何を測っているか）を揃えると、誤解が減ります。
+            まずは「全体の流れ」と「地域ごとの差」を分けて見てみましょう。数字が何を表しているかをそろえると、理解しやすくなります。
           </Typography>
         </Stack>
         <Box sx={styles.dataGrid}>
@@ -32,7 +32,7 @@ export default function DataSection() {
                   約26,000頭
                 </Typography>
                 <Typography sx={styles.dataStatLabel}>
-                  個体数は地域で違います。増えている地域と減っている地域が混在します。
+                  個体数は地域で違います。増えている地域も、減っている地域もあります。
                 </Typography>
               </Box>
             </Box>
@@ -51,7 +51,7 @@ export default function DataSection() {
                   +1か月
                 </Typography>
                 <Typography sx={styles.dataStatLabel}>
-                  海氷のない期間が伸びるほど不利になります。体重や繁殖への負荷が増えます。
+                  海氷のない期間が長いほど不利になります。体重や子育てへの負担が増えます。
                 </Typography>
               </Box>
             </Box>
@@ -65,7 +65,7 @@ export default function DataSection() {
             </Typography>
           </Stack>
           <Typography sx={styles.dataMapLead} textAlign="center">
-            ホッキョクグマは北極圏の5カ国（カナダ、ロシア、アメリカ、ノルウェー、グリーンランド/デンマーク）に分布し、19の個体群に分かれています。
+            ホッキョクグマは北極圏の5カ国（カナダ、ロシア、アメリカ、ノルウェー、グリーンランド/デンマーク）に暮らしていて、19のグループに分かれています。
           </Typography>
           <Box sx={styles.dataPopulationMapBox}>
             <Image
@@ -77,7 +77,7 @@ export default function DataSection() {
             />
           </Box>
           <Typography sx={styles.dataMapCaption}>
-            ※ 地図出典: WWF Global Arctic Programme (2025)。色は個体群の保全状態を示しています。
+            ※ 地図出典: WWF Global Arctic Programme (2025)。色は個体群の保全の状況を示しています。
           </Typography>
         </Box>
       </Container>

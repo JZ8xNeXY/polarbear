@@ -12,14 +12,73 @@ body {
 
 body {
   color: #0b1b2b;
-  background: radial-gradient(circle at top, #ffffff 0%, #f4f9ff 35%, #e6f1ff 100%);
+  background: radial-gradient(circle at top, #ffffff 0%, #f7fbff 40%, #edf4ff 100%);
   background-image:
-    radial-gradient(circle at top, #ffffff 0%, #f4f9ff 35%, #e6f1ff 100%),
+    radial-gradient(circle at top, #ffffff 0%, #f7fbff 40%, #edf4ff 100%),
     var(--ice-texture);
   background-blend-mode: normal, multiply;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.page-root {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-top: var(--header-height);
+  padding-bottom: var(--footer-height);
+}
+
+.page-root::before,
+.page-root::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-root::before {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.0) 0%,
+      rgba(235, 246, 255, 0.35) 18%,
+      rgba(255, 250, 240, 0.28) 36%,
+      rgba(232, 248, 245, 0.32) 54%,
+      rgba(245, 249, 255, 0.4) 72%,
+      rgba(255, 255, 255, 0.0) 100%
+    ),
+    radial-gradient(1200px 520px at 10% 12%, rgba(124, 214, 255, 0.12) 0%, transparent 60%),
+    radial-gradient(900px 420px at 90% 18%, rgba(123, 237, 190, 0.1) 0%, transparent 60%),
+    radial-gradient(800px 360px at 85% 55%, rgba(245, 158, 11, 0.06) 0%, transparent 55%);
+  opacity: 0.65;
+}
+
+.page-root::after {
+  background:
+    radial-gradient(900px 380px at 15% 70%, rgba(47, 143, 212, 0.06) 0%, transparent 60%),
+    radial-gradient(1000px 420px at 50% 92%, rgba(15, 23, 42, 0.04) 0%, transparent 65%),
+    repeating-linear-gradient(
+      135deg,
+      rgba(124, 214, 255, 0.05) 0,
+      rgba(124, 214, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 10px
+    );
+  mix-blend-mode: normal;
+  opacity: 0.45;
+}
+
+.page-root > * {
+  position: relative;
+  z-index: 1;
 }
 
 :root {
+  --header-height: 72px;
+  --footer-height: 104px;
   --surface-1: #ffffff;
   --surface-2: #f2f7ff;
   --accent-ice: #2f8fd4;
@@ -29,6 +88,13 @@ body {
   --glass-border: rgba(47, 143, 212, 0.18);
   --glass-shadow: 0 18px 50px rgba(12, 34, 60, 0.12);
   --ice-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Crect width='320' height='320' fill='none'/%3E%3Cg stroke='%2399c8ef' stroke-opacity='0.18' stroke-width='1'%3E%3Cpath d='M10 40 L80 10 L150 40 L220 20 L300 60'/%3E%3Cpath d='M30 120 L110 90 L170 120 L240 100 L310 140'/%3E%3Cpath d='M0 200 L60 180 L140 210 L210 190 L280 230'/%3E%3Cpath d='M20 280 L90 250 L160 280 L230 260 L300 300'/%3E%3C/g%3E%3Cg stroke='%23b8ddf5' stroke-opacity='0.22' stroke-width='1'%3E%3Cpath d='M40 20 L70 80 L30 140 L90 200'/%3E%3Cpath d='M180 30 L210 90 L170 150 L230 210'/%3E%3Cpath d='M260 50 L290 110 L250 170 L300 230'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+@media (max-width: 600px) {
+  :root {
+    --header-height: 64px;
+    --footer-height: 92px;
+  }
 }
 
 a {

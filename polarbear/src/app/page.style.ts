@@ -27,16 +27,16 @@ const styles: Record<string, SxProps<Theme>> = {
     position: 'absolute',
     inset: 0,
     background:
-      'linear-gradient(180deg, rgba(7,11,18,0.7) 0%, rgba(7,11,18,0.95) 80%)',
+      'linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(7,11,18,0.42) 80%)',
     zIndex: 1,
   },
   heroAuroraOverlay: {
     position: 'absolute',
     inset: 0,
     background:
-      'radial-gradient(1200px 420px at 15% 10%, rgba(124,214,255,0.35) 0%, rgba(124,214,255,0) 70%), radial-gradient(900px 320px at 80% 5%, rgba(123,237,190,0.25) 0%, rgba(123,237,190,0) 65%)',
+      'radial-gradient(1200px 420px at 15% 10%, rgba(124,214,255,0.12) 0%, rgba(124,214,255,0) 70%), radial-gradient(900px 320px at 80% 5%, rgba(123,237,190,0.1) 0%, rgba(123,237,190,0) 65%)',
     mixBlendMode: 'screen',
-    opacity: 0.7,
+    opacity: 0.45,
     zIndex: 1,
     pointerEvents: 'none',
   },
@@ -93,6 +93,9 @@ const styles: Record<string, SxProps<Theme>> = {
   aboutSection: {
     py: { xs: 10, md: 14 },
     position: 'relative',
+    bgcolor: '#ffffff',
+    boxShadow:
+      'inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(12,34,60,0.08)',
     '&::before': {
       content: '""',
       position: 'absolute',
@@ -103,10 +106,21 @@ const styles: Record<string, SxProps<Theme>> = {
       background:
         'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%)',
     },
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      inset: 0,
+      background:
+        'radial-gradient(ellipse 100% 60% at 50% 0%, rgba(240, 247, 255, 0.4) 0%, transparent 50%), radial-gradient(ellipse 80% 40% at 20% 100%, rgba(230, 241, 255, 0.3) 0%, transparent 50%)',
+      pointerEvents: 'none',
+      zIndex: 0,
+    },
   },
   aboutIntro: {
     maxWidth: '100%',
     mb: 6,
+    position: 'relative',
+    zIndex: 1,
   },
   aboutTitle: {
     fontSize: { xs: '2.3rem', md: '3.2rem' },
@@ -119,6 +133,8 @@ const styles: Record<string, SxProps<Theme>> = {
     display: 'grid',
     gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
     gap: 3,
+    position: 'relative',
+    zIndex: 1,
   },
   aboutCard: {
     bgcolor: 'var(--glass)',
@@ -150,17 +166,17 @@ const styles: Record<string, SxProps<Theme>> = {
   },
   threatSection: {
     py: { xs: 10, md: 14 },
-    bgcolor: 'transparent',
     position: 'relative',
-    '&::after': {
+    background: 'linear-gradient(180deg, rgba(255,248,240,0.95) 0%, rgba(255,241,232,0.9) 50%, rgba(255,248,245,0.85) 100%)',
+    boxShadow:
+      'inset 0 1px 0 rgba(255,255,255,0.75), inset 0 -1px 0 rgba(12,34,60,0.08)',
+    '&::before': {
       content: '""',
       position: 'absolute',
-      left: 0,
-      right: 0,
-      bottom: { xs: -50, md: -70 },
-      height: { xs: 80, md: 120 },
-      background:
-        'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(230,241,255,0.85) 100%)',
+      inset: 0,
+      background: 'radial-gradient(ellipse 80% 50% at 20% 20%, rgba(231,111,81,0.08) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(245,158,11,0.06) 0%, transparent 50%)',
+      pointerEvents: 'none',
+      zIndex: 0,
     },
   },
   threatTopRow: {
@@ -270,6 +286,18 @@ const styles: Record<string, SxProps<Theme>> = {
   dataSection: {
     py: { xs: 10, md: 14 },
     position: 'relative',
+    background: 'linear-gradient(180deg, #f0f7ff 0%, #e6f1ff 50%, #f5f9fc 100%)',
+    boxShadow:
+      'inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(12,34,60,0.08)',
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      inset: 0,
+      background:
+        'radial-gradient(ellipse 120% 70% at 30% 20%, rgba(124, 214, 255, 0.12) 0%, transparent 60%), radial-gradient(ellipse 90% 50% at 70% 80%, rgba(47, 143, 212, 0.08) 0%, transparent 50%)',
+      pointerEvents: 'none',
+      zIndex: 0,
+    },
     '&::after': {
       content: '""',
       position: 'absolute',
@@ -279,11 +307,14 @@ const styles: Record<string, SxProps<Theme>> = {
       height: { xs: 70, md: 100 },
       background:
         'linear-gradient(180deg, rgba(230,241,255,0.85) 0%, rgba(255,255,255,0) 100%)',
+      zIndex: 0,
     },
   },
   dataHeader: {
     textAlign: 'center',
     mb: 6,
+    position: 'relative',
+    zIndex: 1,
   },
   dataTitle: {
     fontSize: { xs: '2.5rem', md: '3.4rem' },
@@ -295,6 +326,8 @@ const styles: Record<string, SxProps<Theme>> = {
     display: 'grid',
     gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
     gap: { xs: 2.5, md: 3 },
+    position: 'relative',
+    zIndex: 1,
   },
   dataImageBox: {
     position: 'relative',
@@ -330,6 +363,8 @@ const styles: Record<string, SxProps<Theme>> = {
   },
   dataMapSection: {
     mt: 6,
+    position: 'relative',
+    zIndex: 1,
   },
   dataMapTitle: {
     fontSize: { xs: '1.8rem', md: '2.2rem' },
@@ -401,6 +436,9 @@ const styles: Record<string, SxProps<Theme>> = {
   importanceSection: {
     py: { xs: 10, md: 14 },
     position: 'relative',
+    background: 'linear-gradient(180deg, #fffef9 0%, #fffaf0 50%, #fffef9 100%)',
+    boxShadow:
+      'inset 0 1px 0 rgba(255,255,255,0.8), inset 0 -1px 0 rgba(12,34,60,0.08)',
     '&::before': {
       content: '""',
       position: 'absolute',
@@ -410,6 +448,16 @@ const styles: Record<string, SxProps<Theme>> = {
       height: { xs: 80, md: 120 },
       background:
         'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(245,250,255,0.9) 100%)',
+      zIndex: 0,
+    },
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      inset: 0,
+      background:
+        'radial-gradient(ellipse 100% 60% at 50% 30%, rgba(255, 237, 213, 0.25) 0%, transparent 50%), radial-gradient(ellipse 80% 50% at 10% 70%, rgba(255, 245, 230, 0.2) 0%, transparent 50%)',
+      pointerEvents: 'none',
+      zIndex: 0,
     },
   },
   importanceCard: {
@@ -418,6 +466,8 @@ const styles: Record<string, SxProps<Theme>> = {
     border: '1px solid var(--glass-border)',
     boxShadow: 'var(--glass-shadow)',
     backdropFilter: 'blur(16px)',
+    position: 'relative',
+    zIndex: 1,
   },
   importanceCardContent: {
     p: { xs: 4, md: 8 },
@@ -428,12 +478,16 @@ const styles: Record<string, SxProps<Theme>> = {
   },
   importanceTitle: {
     fontSize: { xs: '2.4rem', md: '3.2rem' },
+    textAlign: 'center',
   },
   importanceGrid: {
     display: 'grid',
     gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
     gap: { xs: 4, md: 5 },
     width: '100%',
+    justifyItems: { xs: 'center', md: 'stretch' },
+    position: 'relative',
+    zIndex: 1,
   },
   importanceItemIcon: {
     fontSize: { xs: 40, md: 48 },
@@ -443,14 +497,28 @@ const styles: Record<string, SxProps<Theme>> = {
     fontSize: { xs: '1.1rem', sm: '1.2rem', md: '1.3rem' },
     lineHeight: 1.4,
     fontWeight: 600,
+    textAlign: 'center',
   },
   importanceItemText: {
     color: '#304357',
     fontSize: { xs: '0.9rem', md: '1rem' },
+    textAlign: 'center',
   },
   actionSection: {
     py: { xs: 10, md: 14 },
     position: 'relative',
+    background: 'linear-gradient(180deg, #f0fdf4 0%, #ecfdf5 50%, #f0fdf4 100%)',
+    boxShadow:
+      'inset 0 1px 0 rgba(255,255,255,0.8), inset 0 -1px 0 rgba(12,34,60,0.08)',
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      inset: 0,
+      background:
+        'radial-gradient(ellipse 110% 65% at 40% 25%, rgba(76, 175, 80, 0.1) 0%, transparent 55%), radial-gradient(ellipse 85% 45% at 60% 75%, rgba(139, 195, 74, 0.08) 0%, transparent 50%)',
+      pointerEvents: 'none',
+      zIndex: 0,
+    },
     '&::after': {
       content: '""',
       position: 'absolute',
@@ -460,11 +528,14 @@ const styles: Record<string, SxProps<Theme>> = {
       height: { xs: 90, md: 120 },
       background:
         'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(230,241,255,0.9) 100%)',
+      zIndex: 0,
     },
   },
   actionHeader: {
     textAlign: 'center',
     mb: 6,
+    position: 'relative',
+    zIndex: 1,
   },
   actionTitle: {
     fontSize: { xs: '2.5rem', md: '3.4rem' },
@@ -476,6 +547,8 @@ const styles: Record<string, SxProps<Theme>> = {
     display: 'grid',
     gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
     gap: 3,
+    position: 'relative',
+    zIndex: 1,
   },
   actionCard: {
     bgcolor: 'var(--glass)',
@@ -551,9 +624,126 @@ const styles: Record<string, SxProps<Theme>> = {
     fontSize: 36,
     color: '#f59e0b',
   },
+  pbiSection: {
+    py: { xs: 10, md: 14 },
+    position: 'relative',
+    background:
+      'linear-gradient(180deg, rgba(240,248,255,0.9) 0%, rgba(233,245,255,0.85) 50%, rgba(245,250,255,0.9) 100%)',
+    boxShadow:
+      'inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(12,34,60,0.08)',
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      inset: 0,
+      background:
+        'radial-gradient(ellipse 90% 60% at 20% 20%, rgba(124, 214, 255, 0.12) 0%, transparent 55%), radial-gradient(ellipse 80% 50% at 80% 80%, rgba(47, 143, 212, 0.08) 0%, transparent 50%)',
+      pointerEvents: 'none',
+      zIndex: 0,
+    },
+  },
+  pbiHeader: {
+    textAlign: 'center',
+    mb: 6,
+    position: 'relative',
+    zIndex: 1,
+    maxWidth: 820,
+    mx: 'auto',
+    alignItems: 'center',
+  },
+  pbiBadge: {
+    alignSelf: 'center',
+    px: 2.5,
+    py: 0.8,
+    borderRadius: 999,
+    fontWeight: 700,
+    letterSpacing: '0.08em',
+    textTransform: 'uppercase',
+    fontSize: '0.75rem',
+    color: '#1f4d70',
+    background: 'rgba(124, 214, 255, 0.22)',
+    border: '1px solid rgba(47, 143, 212, 0.28)',
+  },
+  pbiTitle: {
+    fontSize: { xs: '2.4rem', md: '3.2rem' },
+  },
+  pbiLead: {
+    color: '#2f4257',
+    fontSize: { xs: '1rem', md: '1.1rem' },
+    lineHeight: 1.8,
+    textWrap: 'balance',
+    textAlign: 'center',
+    width: '100%',
+  },
+  pbiBody: {
+    color: '#304357',
+    lineHeight: 1.8,
+    textWrap: 'balance',
+    textAlign: 'center',
+    width: '100%',
+  },
+  pbiGrid: {
+    display: 'grid',
+    gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
+    gap: 3,
+    position: 'relative',
+    zIndex: 1,
+  },
+  pbiCard: {
+    bgcolor: 'var(--glass)',
+    borderRadius: 4,
+    border: '1px solid var(--glass-border)',
+    boxShadow: 'var(--glass-shadow)',
+    backdropFilter: 'blur(12px)',
+    height: '100%',
+  },
+  pbiCardTitle: {
+    fontSize: '1.4rem',
+    color: '#0b1b2b',
+  },
+  pbiCardBody: {
+    color: '#304357',
+  },
+  pbiNote: {
+    mt: 5,
+    textAlign: 'center',
+    color: '#4a647f',
+    fontSize: '0.95rem',
+    position: 'relative',
+    zIndex: 1,
+  },
+  pbiCta: {
+    mt: 3,
+    position: 'relative',
+    zIndex: 1,
+    alignItems: 'center',
+  },
+  pbiButton: {
+    bgcolor: '#2f8fd4',
+    color: '#ffffff',
+    px: 5,
+    py: 1.8,
+    fontWeight: 700,
+    fontSize: '1.05rem',
+    minWidth: { xs: '100%', sm: 240 },
+    boxShadow: '0 14px 28px rgba(47, 143, 212, 0.25)',
+    '&:hover': { bgcolor: '#5aa7de' },
+  },
+  pbiSecondaryButton: {
+    borderColor: 'rgba(47, 143, 212, 0.45)',
+    color: '#1f4d70',
+    px: 4.5,
+    py: 1.6,
+    fontWeight: 700,
+    fontSize: '1rem',
+    minWidth: { xs: '100%', sm: 220 },
+    '&:hover': { borderColor: '#2f8fd4', color: '#2f8fd4' },
+  },
   ctaSection: {
     py: { xs: 10, md: 14 },
     position: 'relative',
+    background: 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%)',
+    boxShadow:
+      'inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -1px 0 rgba(12,34,60,0.35)',
     '&::before': {
       content: '""',
       position: 'absolute',
@@ -562,7 +752,7 @@ const styles: Record<string, SxProps<Theme>> = {
       right: 0,
       height: { xs: 80, md: 120 },
       background:
-        'linear-gradient(180deg, rgba(230,241,255,0.9) 0%, rgba(255,255,255,0) 100%)',
+        'linear-gradient(180deg, rgba(34,50,74,0.75) 0%, rgba(34,50,74,0) 100%)',
     },
   },
   ctaBox: {
@@ -608,6 +798,228 @@ const styles: Record<string, SxProps<Theme>> = {
     py: 1.5,
     backdropFilter: 'blur(6px)',
     '&:hover': { borderColor: '#ffffff', color: '#ffffff' },
+  },
+  climateSection: {
+    py: { xs: 10, md: 14 },
+    position: 'relative',
+    background: 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%)',
+    color: '#000',
+    boxShadow:
+      'inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(12,34,60,0.08)',
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      inset: 0,
+      background: 'radial-gradient(ellipse 100% 80% at 50% 0%, rgba(124,214,255,0.18) 0%, transparent 55%), radial-gradient(ellipse 70% 45% at 20% 100%, rgba(173,229,255,0.12) 0%, transparent 45%)',
+      pointerEvents: 'none',
+    },
+  },
+  climateIntro: {
+    textAlign: 'center',
+    mb: 6,
+    position: 'relative',
+    zIndex: 1,
+  },
+  climateTitle: {
+    fontSize: { xs: '2.3rem', md: '3.2rem' },
+    color: '#0b1b2b',
+    textShadow: 'none',
+  },
+  climateLead: {
+    color: '#304357',
+    fontSize: '1.1rem',
+  },
+  climateMechanismGrid: {
+    display: 'grid',
+    gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
+    gap: 3,
+    mb: 6,
+    position: 'relative',
+    zIndex: 1,
+  },
+  climateMechanismCard: {
+    bgcolor: 'rgba(255,255,255,0.78)',
+    border: '1px solid var(--glass-border)',
+    borderRadius: 4,
+    boxShadow: 'var(--glass-shadow)',
+    backdropFilter: 'blur(14px)',
+    height: '100%',
+  },
+  climateMechanismCardContent: {
+    p: { xs: 3, md: 4 },
+  },
+  climateMechanismTitle: {
+    fontSize: '1.4rem',
+    color: '#0b1b2b',
+  },
+  climateMechanismBody: {
+    color: '#304357',
+    lineHeight: 1.7,
+  },
+  climateStepNumber: {
+    fontSize: '1.1rem',
+    fontWeight: 700,
+    color: '#2f6f9f',
+  },
+  climateStepIconBgSun: {
+    width: 52,
+    height: 52,
+    borderRadius: '16px',
+    display: 'grid',
+    placeItems: 'center',
+    bgcolor: 'rgba(245, 158, 11, 0.15)',
+    border: '1px solid rgba(245,158,11,0.3)',
+  },
+  climateStepIconSun: {
+    fontSize: 28,
+    color: '#f59e0b',
+  },
+  climateStepIconBgWarm: {
+    width: 52,
+    height: 52,
+    borderRadius: '16px',
+    display: 'grid',
+    placeItems: 'center',
+    bgcolor: 'rgba(231, 111, 81, 0.12)',
+    border: '1px solid rgba(231,111,81,0.3)',
+  },
+  climateStepIconWarm: {
+    fontSize: 28,
+    color: '#e76f51',
+  },
+  climateStepIconBgBlue: {
+    width: 52,
+    height: 52,
+    borderRadius: '16px',
+    display: 'grid',
+    placeItems: 'center',
+    bgcolor: 'rgba(47, 143, 212, 0.12)',
+    border: '1px solid rgba(47,143,212,0.28)',
+  },
+  climateStepIconBlue: {
+    fontSize: 28,
+    color: '#2f8fd4',
+  },
+  climateResultSection: {
+    textAlign: 'center',
+    mb: 6,
+    position: 'relative',
+    zIndex: 1,
+  },
+  climateResultTitle: {
+    fontSize: { xs: '1.6rem', md: '2rem' },
+    mb: 4,
+    color: '#0b1b2b',
+  },
+  climateResultGrid: {
+    display: 'grid',
+    gridTemplateColumns: { xs: '1fr', sm: 'repeat(3, 1fr)' },
+    gap: 3,
+  },
+  climateResultCard: {
+    bgcolor: 'rgba(255,255,255,0.8)',
+    borderRadius: 4,
+    border: '1px solid var(--glass-border)',
+    boxShadow: 'var(--glass-shadow)',
+    backdropFilter: 'blur(10px)',
+    p: 3,
+    textAlign: 'center',
+  },
+  climateResultIconBox: {
+    width: 48,
+    height: 48,
+    borderRadius: '50%',
+    display: 'grid',
+    placeItems: 'center',
+    bgcolor: 'rgba(124, 214, 255, 0.18)',
+    mx: 'auto',
+    mb: 2,
+    '& svg': {
+      fontSize: 24,
+      color: '#7cd6ff',
+    },
+  },
+  climateResultValue: {
+    fontSize: { xs: '1.8rem', md: '2.2rem' },
+    fontWeight: 700,
+    color: '#2f8fd4',
+    mb: 1,
+  },
+  climateResultLabel: {
+    color: '#304357',
+    fontSize: '0.95rem',
+  },
+  climateFeedbackDiagram: {
+    bgcolor: 'rgba(255,255,255,0.9)',
+    borderRadius: 5,
+    border: '1px solid var(--glass-border)',
+    boxShadow: 'var(--glass-shadow)',
+    p: { xs: 3, md: 5 },
+    textAlign: 'center',
+  },
+  climateFeedbackImageContainer: {
+    position: 'relative',
+    width: '100%',
+    maxWidth: { xs: '100%', sm: 600, md: 700 },
+    height: { xs: 300, sm: 400, md: 500 },
+    mb: 2,
+    mx: 'auto',
+  },
+  climateFeedbackTitle: {
+    fontSize: { xs: '1.2rem', md: '1.4rem' },
+    fontWeight: 600,
+    mb: 4,
+    color: '#1a3a5c',
+  },
+  climateFeedbackFlow: {
+    display: 'flex',
+    flexDirection: { xs: 'column', sm: 'row' },
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: { xs: 1, sm: 2 },
+    flexWrap: 'wrap',
+  },
+  climateFeedbackStep: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: 1.5,
+  },
+  climateFeedbackCircle: {
+    width: 64,
+    height: 64,
+    borderRadius: '50%',
+    display: 'grid',
+    placeItems: 'center',
+    bgcolor: 'rgba(245, 250, 255, 1)',
+    border: '2px solid rgba(47, 143, 212, 0.3)',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+  },
+  climateFeedbackLabel: {
+    fontSize: '0.9rem',
+    color: '#304357',
+    lineHeight: 1.4,
+    textAlign: 'center',
+  },
+  climateFeedbackArrow: {
+    fontSize: { xs: '1.5rem', sm: '2rem' },
+    color: '#9eb8cf',
+    fontWeight: 300,
+    transform: { xs: 'rotate(90deg)', sm: 'none' },
+  },
+  climateFeedbackLoopIndicator: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    mt: 4,
+    color: '#6a8ca8',
+    '& svg': {
+      animation: 'spin 3s linear infinite',
+    },
+    '@keyframes spin': {
+      from: { transform: 'rotate(0deg)' },
+      to: { transform: 'rotate(360deg)' },
+    },
   },
 }
 

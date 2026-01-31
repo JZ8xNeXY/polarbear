@@ -21,8 +21,8 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const menuItems = [
-    { label: '概要', href: '#about' },
-    { label: '現状と課題', href: '#threats' },
+    { label: '基本を知る', href: '#about' },
+    { label: 'いまのこと', href: '#threats' },
     { label: 'できること', href: '#action' },
   ]
 
@@ -37,17 +37,18 @@ export default function Header() {
   return (
     <>
       <AppBar
-        position="sticky"
+        position="fixed"
         sx={{
           backgroundColor: 'rgba(255,255,255,0.92)',
           backdropFilter: 'blur(12px)',
           color: '#1b4566',
           borderBottom: '1px solid rgba(47,143,212,0.15)',
+          height: { xs: 64, md: 72 },
         }}
       >
-        <Toolbar>
+        <Toolbar sx={{ minHeight: { xs: 64, md: 72 } }}>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: 700 }}>
-            ホッキョクグマ保護
+            ホッキョクグマを守ろう
           </Typography>
           <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 2 }}>
             {menuItems.map((item) => (

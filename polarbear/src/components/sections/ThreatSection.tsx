@@ -12,7 +12,7 @@ const threatCards = [
         <TrendingDown sx={styles.threatIconWarm} />
       </Box>
     ),
-    title: '狩りが難しくなる',
+    title: '狩りがしづらくなる',
     body: '海氷が少ないと、アザラシに近づきにくくなります。',
   },
   {
@@ -21,8 +21,8 @@ const threatCards = [
         <Waves sx={styles.threatIconCool} />
       </Box>
     ),
-    title: '移動の負担が増える',
-    body: '泳ぐ距離が増え、事故のリスクも高まります。',
+    title: '移動が大変になる',
+    body: '泳ぐ距離が増え、体力の消耗や事故のリスクが増えます。',
   },
   {
     icon: (
@@ -30,8 +30,8 @@ const threatCards = [
         <TrendingUp sx={styles.threatIconSun} />
       </Box>
     ),
-    title: '食べられない期間が伸びる',
-    body: '体重が落ちやすくなり、繁殖の余力も削られます。',
+    title: '食べられない時期が長くなる',
+    body: '体重が落ちやすくなり、子育ての余裕も減ってしまいます。',
   },
 ]
 
@@ -41,10 +41,10 @@ export default function ThreatSection() {
       <Container maxWidth="lg">
         <Stack spacing={2} sx={{ textAlign: 'center', mb: 6 }}>
           <Typography variant="h2" sx={{ fontSize: { xs: '2.6rem', md: '3.6rem' } }}>
-            足場の時間が減ると、暮らしが揺らぐ
+            足場の時間が減ると、暮らしがゆらぐ
           </Typography>
           <Typography sx={{ color: '#2f4257' }}>
-            脅威の中心は「気温」そのものより、狩りの足場になる海氷が使える期間です。期間が短くなるほど、狩り・体重・繁殖の余力が削られていきます。
+            ポイントは「気温」そのものより、狩りの足場になる海氷が使える期間。短くなるほど、狩りや体重、子育てに余裕がなくなります。
           </Typography>
         </Stack>
         <Box sx={styles.threatTopRow}>
@@ -53,10 +53,10 @@ export default function ThreatSection() {
               <Stack spacing={3}>
                 <TrendingDown sx={styles.threatStatIcon} />
                 <Typography variant="h2" sx={styles.threatStatTitle}>
-                  海氷は約40%減少
+                  海氷は約40%減っています
                 </Typography>
                 <Typography sx={styles.threatStatLead}>
-                  夏季の海氷は過去40年で大幅に縮小。狩りの場が失われています。
+                  夏の海氷は過去40年で大きく縮小。狩りの場が減ってきています。
                 </Typography>
               </Stack>
             </CardContent>

@@ -22,14 +22,14 @@ export default function CtaSection() {
               いま、知ることから始めよう
             </Typography>
             <Typography sx={styles.ctaLead}>
-              ホッキョクグマを守る行動は、今日から選べます。まずは現状を知り、次に「ひとつだけ」動きましょう。
+              ホッキョクグマを守るために、今日からできることがあります。まずは今を知って、できそうな「ひとつ」から始めてみませんか。
             </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
               <Button variant="contained" size="large" sx={styles.ctaPrimaryButton} fullWidth>
-                現状を知る
+                いまを知る
               </Button>
               <Button variant="outlined" size="large" sx={styles.ctaSecondaryButton} fullWidth>
-                できることを見る
+                できることを探す
               </Button>
             </Stack>
           </Stack>

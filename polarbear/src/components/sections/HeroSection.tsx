@@ -24,15 +24,15 @@ export default function HeroSection() {
       <Box className="ice-drift" />
       <Container maxWidth="lg" sx={styles.heroContainer}>
         <Stack spacing={{ xs: 3, md: 4 }} sx={styles.heroStack}>
-          <Chip label="ホッキョクグマについて知る" sx={styles.heroChip} />
+          <Chip label="ホッキョクグマ保護のきほん" sx={styles.heroChip} />
           <Typography variant="h1" sx={styles.heroTitle}>
             ホッキョクグマを守るために
             <br />
-            いま、知ることから始めよう
+            いま、できることを知ろう
           </Typography>
           <Typography sx={styles.heroLead}>
-            海氷は、ホッキョクグマにとって「狩りの足場」です。
-            その“氷の季節”が短くなるほど、生きる条件は厳しくなっていきます。
+            海氷は、ホッキョクグマの「狩りの足場」。
+            氷の季節が短くなるほど、くらしは厳しくなります。
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={styles.heroButtons}>
             <Button
@@ -43,7 +43,7 @@ export default function HeroSection() {
               sx={styles.heroPrimaryButton}
               fullWidth
             >
-              現状を知る
+              いまの状況を知る
             </Button>
             <Button
               href="#action"
@@ -52,7 +52,7 @@ export default function HeroSection() {
               sx={styles.heroSecondaryButton}
               fullWidth
             >
-              できることを見る
+              できることを見てみる
             </Button>
           </Stack>
         </Stack>

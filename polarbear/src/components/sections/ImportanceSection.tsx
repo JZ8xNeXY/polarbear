@@ -13,38 +13,50 @@ export default function ImportanceSection() {
             <Stack spacing={4} alignItems="center" textAlign="center">
               <FlashOn sx={styles.importanceIcon} />
               <Typography variant="h2" sx={styles.importanceTitle}>
-                なぜ守るのか
+                なぜ守りたいのか
               </Typography>
               <Box sx={styles.importanceGrid}>
-                <Stack spacing={1.5} alignItems="center" sx={{ maxWidth: 280 }}>
+                <Stack
+                  spacing={1.5}
+                  alignItems="center"
+                  sx={{ maxWidth: 280, mx: 'auto', textAlign: 'center', width: '100%' }}
+                >
                   <Public sx={styles.importanceItemIcon} />
                   <Typography variant="h3" sx={styles.importanceItemTitle}>
                     北極の変化を
                     <br />
-                    最前線で受ける存在
+                    いち早く受ける存在
                   </Typography>
                   <Typography sx={styles.importanceItemText}>
-                    海氷の変化が、そのまま生存条件になります。
+                    海氷の変化が、そのまま暮らしに直結します。
                   </Typography>
                 </Stack>
-                <Stack spacing={1.5} alignItems="center" sx={{ maxWidth: 280 }}>
+                <Stack
+                  spacing={1.5}
+                  alignItems="center"
+                  sx={{ maxWidth: 280, mx: 'auto', textAlign: 'center', width: '100%' }}
+                >
                   <Thermostat sx={styles.importanceItemIcon} />
                   <Typography variant="h3" sx={styles.importanceItemTitle}>
-                    北極は
+                    北極の変化は
                     <br />
-                    地球全体に関係する
+                    地球全体にもつながる
                   </Typography>
                   <Typography sx={styles.importanceItemText}>
-                    氷が減ると反射が弱まり、さらに温まりやすくなります。
+                    氷が減ると反射が弱まり、さらに暖まりやすくなります。
                   </Typography>
                 </Stack>
-                <Stack spacing={1.5} alignItems="center" sx={{ maxWidth: 280 }}>
+                <Stack
+                  spacing={1.5}
+                  alignItems="center"
+                  sx={{ maxWidth: 280, mx: 'auto', textAlign: 'center', width: '100%' }}
+                >
                   <AccessTime sx={styles.importanceItemIcon} />
                   <Typography variant="h3" sx={styles.importanceItemTitle}>
-                    保護は連鎖する
+                    やさしい行動は広がる
                   </Typography>
                   <Typography sx={styles.importanceItemText}>
-                    知る人が増えるほど、支援と意思決定が変わります。
+                    知る人が増えるほど、支える動きや決め方が少しずつ変わります。
                   </Typography>
                 </Stack>
               </Box>
