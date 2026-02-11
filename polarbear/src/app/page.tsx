@@ -3,7 +3,6 @@ import Header from '@/components/Header'
 import AboutSection from '@/components/sections/AboutSection'
 import ActionSection from '@/components/sections/ActionSection'
 import ClimateSection from '@/components/sections/ClimateSection'
-import CtaSection from '@/components/sections/CtaSection'
 import DataSection from '@/components/sections/DataSection'
 import HeroSection from '@/components/sections/HeroSection'
 import ImportanceSection from '@/components/sections/ImportanceSection'
@@ -23,7 +22,6 @@ export default function Home() {
         <ImportanceSection />
         <ActionSection />
         <PbiSection />
-        <CtaSection />
       </main>
       <Footer />
     </>

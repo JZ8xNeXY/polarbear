@@ -20,14 +20,14 @@ const notoSerif = Noto_Serif_JP({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://polarbear-opal.vercel.app'),
-  title: 'ホッキョクグマ保護 | Polar Bear Conservation',
-  description: 'ホッキョクグマの環境保護と生態系の維持を支援するサイト',
+  title: 'ホッキョクグマを守ろう | やさしい保護ガイド',
+  description: 'ホッキョクグマの今をやさしく知って、今日できる行動につなげるサイトです。',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'ホッキョクグマ保護 | Polar Bear Conservation',
-    description: 'ホッキョクグマの環境保護と生態系の維持を支援するサイト',
+    title: 'ホッキョクグマを守ろう | やさしい保護ガイド',
+    description: 'ホッキョクグマの今をやさしく知って、今日できる行動につなげるサイトです。',
     type: 'website',
     locale: 'ja_JP',
     url: 'https://polarbear-opal.vercel.app',
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ホッキョクグマ保護 | Polar Bear Conservation',
-    description: 'ホッキョクグマの環境保護と生態系の維持を支援するサイト',
+    title: 'ホッキョクグマを守ろう | やさしい保護ガイド',
+    description: 'ホッキョクグマの今をやさしく知って、今日できる行動につなげるサイトです。',
     images: ['/images/hans-jurgen-mager-Ec_ygZTIv_0-unsplash.jpg'],
   },
   robots: {

@@ -93,7 +93,7 @@ const styles: Record<string, SxProps<Theme>> = {
   aboutSection: {
     py: { xs: 10, md: 14 },
     position: 'relative',
-    bgcolor: '#ffffff',
+    bgcolor: 'var(--bg-section-base)',
     boxShadow:
       'inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(12,34,60,0.08)',
     '&::before': {
@@ -104,14 +104,14 @@ const styles: Record<string, SxProps<Theme>> = {
       right: 0,
       height: { xs: 60, md: 90 },
       background:
-        'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%)',
+        'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(246,250,255,0.9) 100%)',
     },
     '&::after': {
       content: '""',
       position: 'absolute',
       inset: 0,
       background:
-        'radial-gradient(ellipse 100% 60% at 50% 0%, rgba(240, 247, 255, 0.4) 0%, transparent 50%), radial-gradient(ellipse 80% 40% at 20% 100%, rgba(230, 241, 255, 0.3) 0%, transparent 50%)',
+        'radial-gradient(ellipse 100% 62% at 50% 0%, rgba(186, 215, 241, 0.14) 0%, transparent 60%), radial-gradient(ellipse 85% 42% at 18% 100%, rgba(164, 197, 228, 0.1) 0%, transparent 58%)',
       pointerEvents: 'none',
       zIndex: 0,
     },
@@ -167,14 +167,16 @@ const styles: Record<string, SxProps<Theme>> = {
   threatSection: {
     py: { xs: 10, md: 14 },
     position: 'relative',
-    background: 'linear-gradient(180deg, rgba(255,248,240,0.95) 0%, rgba(255,241,232,0.9) 50%, rgba(255,248,245,0.85) 100%)',
+    background:
+      'linear-gradient(180deg, var(--bg-section-warm) 0%, #fff6ef 52%, var(--bg-section-sand) 100%)',
     boxShadow:
       'inset 0 1px 0 rgba(255,255,255,0.75), inset 0 -1px 0 rgba(12,34,60,0.08)',
     '&::before': {
       content: '""',
       position: 'absolute',
       inset: 0,
-      background: 'radial-gradient(ellipse 80% 50% at 20% 20%, rgba(231,111,81,0.08) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(245,158,11,0.06) 0%, transparent 50%)',
+      background:
+        'radial-gradient(ellipse 84% 52% at 22% 20%, rgba(231,111,81,0.07) 0%, transparent 62%), radial-gradient(ellipse 66% 42% at 82% 82%, rgba(245,158,11,0.05) 0%, transparent 56%)',
       pointerEvents: 'none',
       zIndex: 0,
     },
@@ -286,7 +288,8 @@ const styles: Record<string, SxProps<Theme>> = {
   dataSection: {
     py: { xs: 10, md: 14 },
     position: 'relative',
-    background: 'linear-gradient(180deg, #f0f7ff 0%, #e6f1ff 50%, #f5f9fc 100%)',
+    background:
+      'linear-gradient(180deg, var(--bg-section-cool) 0%, var(--bg-section-cool-soft) 52%, var(--bg-section-frost) 100%)',
     boxShadow:
       'inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(12,34,60,0.08)',
     '&::before': {
@@ -294,7 +297,7 @@ const styles: Record<string, SxProps<Theme>> = {
       position: 'absolute',
       inset: 0,
       background:
-        'radial-gradient(ellipse 120% 70% at 30% 20%, rgba(124, 214, 255, 0.12) 0%, transparent 60%), radial-gradient(ellipse 90% 50% at 70% 80%, rgba(47, 143, 212, 0.08) 0%, transparent 50%)',
+        'radial-gradient(ellipse 118% 68% at 28% 18%, rgba(124, 214, 255, 0.1) 0%, transparent 64%), radial-gradient(ellipse 92% 52% at 74% 82%, rgba(47, 143, 212, 0.06) 0%, transparent 56%)',
       pointerEvents: 'none',
       zIndex: 0,
     },
@@ -306,7 +309,7 @@ const styles: Record<string, SxProps<Theme>> = {
       bottom: { xs: -40, md: -60 },
       height: { xs: 70, md: 100 },
       background:
-        'linear-gradient(180deg, rgba(230,241,255,0.85) 0%, rgba(255,255,255,0) 100%)',
+        'linear-gradient(180deg, rgba(227,238,252,0.82) 0%, rgba(255,255,255,0) 100%)',
       zIndex: 0,
     },
   },
@@ -436,7 +439,8 @@ const styles: Record<string, SxProps<Theme>> = {
   importanceSection: {
     py: { xs: 10, md: 14 },
     position: 'relative',
-    background: 'linear-gradient(180deg, #fffef9 0%, #fffaf0 50%, #fffef9 100%)',
+    background:
+      'linear-gradient(180deg, var(--bg-section-sand) 0%, #fff9f1 52%, var(--bg-section-base) 100%)',
     boxShadow:
       'inset 0 1px 0 rgba(255,255,255,0.8), inset 0 -1px 0 rgba(12,34,60,0.08)',
     '&::before': {
@@ -447,7 +451,7 @@ const styles: Record<string, SxProps<Theme>> = {
       right: 0,
       height: { xs: 80, md: 120 },
       background:
-        'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(245,250,255,0.9) 100%)',
+        'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(247,250,255,0.86) 100%)',
       zIndex: 0,
     },
     '&::after': {
@@ -455,7 +459,7 @@ const styles: Record<string, SxProps<Theme>> = {
       position: 'absolute',
       inset: 0,
       background:
-        'radial-gradient(ellipse 100% 60% at 50% 30%, rgba(255, 237, 213, 0.25) 0%, transparent 50%), radial-gradient(ellipse 80% 50% at 10% 70%, rgba(255, 245, 230, 0.2) 0%, transparent 50%)',
+        'radial-gradient(ellipse 102% 62% at 52% 32%, rgba(255, 224, 184, 0.17) 0%, transparent 58%), radial-gradient(ellipse 82% 52% at 12% 72%, rgba(255, 239, 214, 0.14) 0%, transparent 56%)',
       pointerEvents: 'none',
       zIndex: 0,
     },
@@ -485,9 +489,21 @@ const styles: Record<string, SxProps<Theme>> = {
     gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
     gap: { xs: 4, md: 5 },
     width: '100%',
-    justifyItems: { xs: 'center', md: 'stretch' },
+    justifyItems: 'stretch',
     position: 'relative',
     zIndex: 1,
+  },
+  importanceItemCard: {
+    p: { xs: 2.5, md: 3 },
+    width: '100%',
+    maxWidth: 320,
+    mx: 'auto',
+    minHeight: { xs: 'auto', md: 220 },
+    bgcolor: 'rgba(255,255,255,0.8)',
+    borderRadius: 4,
+    border: '1px solid rgba(47,143,212,0.16)',
+    boxShadow: '0 10px 26px rgba(12,34,60,0.08)',
+    backdropFilter: 'blur(8px)',
   },
   importanceItemIcon: {
     fontSize: { xs: 40, md: 48 },
@@ -497,17 +513,20 @@ const styles: Record<string, SxProps<Theme>> = {
     fontSize: { xs: '1.1rem', sm: '1.2rem', md: '1.3rem' },
     lineHeight: 1.4,
     fontWeight: 600,
-    textAlign: 'center',
+    textAlign: 'left',
+    width: '100%',
   },
   importanceItemText: {
     color: '#304357',
     fontSize: { xs: '0.9rem', md: '1rem' },
-    textAlign: 'center',
+    textAlign: 'left',
+    width: '100%',
   },
   actionSection: {
     py: { xs: 10, md: 14 },
     position: 'relative',
-    background: 'linear-gradient(180deg, #f0fdf4 0%, #ecfdf5 50%, #f0fdf4 100%)',
+    background:
+      'linear-gradient(180deg, var(--bg-section-mint) 0%, #edf9f3 52%, var(--bg-section-base) 100%)',
     boxShadow:
       'inset 0 1px 0 rgba(255,255,255,0.8), inset 0 -1px 0 rgba(12,34,60,0.08)',
     '&::before': {
@@ -515,7 +534,7 @@ const styles: Record<string, SxProps<Theme>> = {
       position: 'absolute',
       inset: 0,
       background:
-        'radial-gradient(ellipse 110% 65% at 40% 25%, rgba(76, 175, 80, 0.1) 0%, transparent 55%), radial-gradient(ellipse 85% 45% at 60% 75%, rgba(139, 195, 74, 0.08) 0%, transparent 50%)',
+        'radial-gradient(ellipse 110% 66% at 42% 24%, rgba(76, 175, 80, 0.08) 0%, transparent 58%), radial-gradient(ellipse 86% 46% at 60% 76%, rgba(109, 181, 138, 0.07) 0%, transparent 55%)',
       pointerEvents: 'none',
       zIndex: 0,
     },
@@ -527,7 +546,7 @@ const styles: Record<string, SxProps<Theme>> = {
       bottom: { xs: -50, md: -70 },
       height: { xs: 90, md: 120 },
       background:
-        'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(230,241,255,0.9) 100%)',
+        'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(232,241,252,0.86) 100%)',
       zIndex: 0,
     },
   },
@@ -628,7 +647,7 @@ const styles: Record<string, SxProps<Theme>> = {
     py: { xs: 10, md: 14 },
     position: 'relative',
     background:
-      'linear-gradient(180deg, rgba(240,248,255,0.9) 0%, rgba(233,245,255,0.85) 50%, rgba(245,250,255,0.9) 100%)',
+      'linear-gradient(180deg, var(--bg-section-cool-soft) 0%, #edf5ff 52%, var(--bg-section-frost) 100%)',
     boxShadow:
       'inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(12,34,60,0.08)',
     '&::before': {
@@ -636,7 +655,7 @@ const styles: Record<string, SxProps<Theme>> = {
       position: 'absolute',
       inset: 0,
       background:
-        'radial-gradient(ellipse 90% 60% at 20% 20%, rgba(124, 214, 255, 0.12) 0%, transparent 55%), radial-gradient(ellipse 80% 50% at 80% 80%, rgba(47, 143, 212, 0.08) 0%, transparent 50%)',
+        'radial-gradient(ellipse 92% 62% at 20% 20%, rgba(124, 214, 255, 0.1) 0%, transparent 58%), radial-gradient(ellipse 82% 52% at 80% 80%, rgba(47, 143, 212, 0.06) 0%, transparent 56%)',
       pointerEvents: 'none',
       zIndex: 0,
     },
@@ -738,71 +757,11 @@ const styles: Record<string, SxProps<Theme>> = {
     minWidth: { xs: '100%', sm: 220 },
     '&:hover': { borderColor: '#2f8fd4', color: '#2f8fd4' },
   },
-  ctaSection: {
-    py: { xs: 10, md: 14 },
-    position: 'relative',
-    background: 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%)',
-    boxShadow:
-      'inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -1px 0 rgba(12,34,60,0.35)',
-    '&::before': {
-      content: '""',
-      position: 'absolute',
-      top: { xs: -50, md: -70 },
-      left: 0,
-      right: 0,
-      height: { xs: 80, md: 120 },
-      background:
-        'linear-gradient(180deg, rgba(34,50,74,0.75) 0%, rgba(34,50,74,0) 100%)',
-    },
-  },
-  ctaBox: {
-    position: 'relative',
-    borderRadius: 6,
-    overflow: 'hidden',
-    border: '1px solid var(--glass-border)',
-    boxShadow: 'var(--glass-shadow)',
-  },
-  ctaOverlay: {
-    position: 'absolute',
-    inset: 0,
-    background: 'linear-gradient(180deg, rgba(6,18,32,0.35) 0%, rgba(6,18,32,0.85) 80%)',
-  },
-  ctaStack: {
-    position: 'relative',
-    p: { xs: 3.5, md: 8 },
-    zIndex: 1,
-  },
-  ctaTitle: {
-    color: '#f4f8ff',
-    fontSize: { xs: '2rem', sm: '2.4rem', md: '3.4rem' },
-    textShadow: '0 10px 24px rgba(5,14,24,0.4)',
-  },
-  ctaLead: {
-    color: '#eef6ff',
-    fontSize: { xs: '1rem', sm: '1.05rem', md: '1.1rem' },
-    textShadow: '0 8px 20px rgba(5,14,24,0.35)',
-  },
-  ctaPrimaryButton: {
-    bgcolor: 'rgba(255,255,255,0.95)',
-    color: '#0b1b2b',
-    fontWeight: 700,
-    px: 4,
-    py: 1.5,
-    boxShadow: '0 16px 30px rgba(15, 38, 68, 0.22)',
-    '&:hover': { bgcolor: '#ffffff' },
-  },
-  ctaSecondaryButton: {
-    borderColor: 'rgba(255,255,255,0.6)',
-    color: 'common.white',
-    px: 4,
-    py: 1.5,
-    backdropFilter: 'blur(6px)',
-    '&:hover': { borderColor: '#ffffff', color: '#ffffff' },
-  },
   climateSection: {
     py: { xs: 10, md: 14 },
     position: 'relative',
-    background: 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%)',
+    background:
+      'linear-gradient(180deg, var(--bg-section-frost) 0%, var(--bg-section-cool) 54%, var(--bg-section-base) 100%)',
     color: '#000',
     boxShadow:
       'inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(12,34,60,0.08)',
@@ -810,7 +769,8 @@ const styles: Record<string, SxProps<Theme>> = {
       content: '""',
       position: 'absolute',
       inset: 0,
-      background: 'radial-gradient(ellipse 100% 80% at 50% 0%, rgba(124,214,255,0.18) 0%, transparent 55%), radial-gradient(ellipse 70% 45% at 20% 100%, rgba(173,229,255,0.12) 0%, transparent 45%)',
+      background:
+        'radial-gradient(ellipse 102% 82% at 52% 0%, rgba(124,214,255,0.14) 0%, transparent 58%), radial-gradient(ellipse 72% 46% at 20% 100%, rgba(173,229,255,0.1) 0%, transparent 50%)',
       pointerEvents: 'none',
     },
   },
@@ -1024,7 +984,8 @@ const styles: Record<string, SxProps<Theme>> = {
   contactPageRoot: {
     py: { xs: 10, md: 14 },
     minHeight: '100vh',
-    background: 'linear-gradient(180deg, rgba(240,248,255,0.75) 0%, rgba(255,255,255,0.95) 100%)',
+    background:
+      'linear-gradient(180deg, var(--bg-section-paper) 0%, var(--bg-section-frost) 54%, var(--bg-section-base) 100%)',
     boxShadow:
       'inset 0 1px 0 rgba(255,255,255,0.8), inset 0 -1px 0 rgba(12,34,60,0.08)',
   },
@@ -1053,7 +1014,8 @@ const styles: Record<string, SxProps<Theme>> = {
   legalPageRoot: {
     py: { xs: 10, md: 14 },
     minHeight: '100vh',
-    background: 'linear-gradient(180deg, rgba(240,248,255,0.75) 0%, rgba(255,255,255,0.95) 100%)',
+    background:
+      'linear-gradient(180deg, var(--bg-section-paper) 0%, var(--bg-section-frost) 54%, var(--bg-section-base) 100%)',
   },
   legalCard: {
     borderRadius: 6,

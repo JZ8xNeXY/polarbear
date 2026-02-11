@@ -10,72 +10,146 @@ import {
 } from '@mui/icons-material'
 import Image from 'next/image'
 import { Box, Card, CardContent, Container, Stack, Typography } from '@mui/material'
+import { usePathname } from 'next/navigation'
 import styles from '@/app/page.style'
-import AlbedoIllustration from './AlbedoIllustration'
+import { getLocaleFromPathname, type Locale } from '@/lib/locale'
 
-const mechanismSteps = [
+const mechanismIcons = [
   {
     icon: <WbSunny sx={styles.climateStepIconSun} />,
     iconBg: styles.climateStepIconBgSun,
     step: '01',
-    title: '温室効果ガスの増加',
-    body: 'CO₂やメタンが増えると、地球から宇宙へ逃げる熱がこもりやすくなります。結果として、地球全体が少しずつ暖まります。',
   },
   {
     icon: <TrendingUp sx={styles.climateStepIconWarm} />,
     iconBg: styles.climateStepIconBgWarm,
     step: '02',
-    title: '北極は暖まりやすい',
-    body: '北極は地球平均より2〜4倍の速さで暖まっています。これを「北極増幅」と呼び、海氷の減少が拍車をかけます。',
   },
   {
     icon: <Loop sx={styles.climateStepIconBlue} />,
     iconBg: styles.climateStepIconBgBlue,
     step: '03',
-    title: '氷が減るほど暖まりやすい',
-    body: '白い氷は太陽の光をはね返しますが、暗い海は熱を吸収します。氷が減る→海が暖まる→さらに氷が減る、という流れ（氷-アルベド・フィードバック）が起きます。',
   },
 ]
 
-const resultCards = [
-  {
-    icon: <AcUnit />,
-    value: '約40%',
-    label: '1979年に比べて夏の海氷面積が減少',
+const resultIcons = [<AcUnit key="result-0" />, <Waves key="result-1" />, <Brightness7 key="result-2" />]
+
+type ClimateText = {
+  title: string
+  lead: string
+  mechanismSteps: Array<{ title: string; body: string }>
+  resultTitle: string
+  results: Array<{ value: string; label: string }>
+  feedbackTitle: string
+  feedbackAlt: string
+}
+
+const climateText: Record<Locale, ClimateText> = {
+  ja: {
+    title: 'なぜ北極の氷は減るの？',
+    lead: '流れはシンプルです。温暖化が進み、北極が先に暖まり、海氷がさらに減っていきます。',
+    mechanismSteps: [
+      {
+        title: '温室効果ガスが増える',
+        body: 'CO2やメタンが増えると、地球に熱が残りやすくなり、気温が上がります。',
+      },
+      {
+        title: '北極は先に暖まりやすい',
+        body: '北極は地球平均より2〜4倍の速さで暖まる傾向があります。これを北極増幅と呼びます。',
+      },
+      {
+        title: '氷が減ると、さらに暖まる',
+        body: '白い氷は光を反射し、海は熱を吸収します。氷が減るほど、暖まりやすい流れが続きます。',
+      },
+    ],
+    resultTitle: '数字で見る変化',
+    results: [
+      { value: '約40%', label: '1979年比で夏の海氷面積が減少' },
+      { value: '+1か月以上', label: '海氷のない期間が長期化' },
+      { value: '2〜4倍', label: '地球平均より速いペースで上昇' },
+    ],
+    feedbackTitle: '氷が減るほど暖まりやすいサイクル',
+    feedbackAlt: '氷が減るほど暖まりやすくなるしくみ',
   },
-  {
-    icon: <Waves />,
-    value: '+1か月以上',
-    label: '海氷のない期間が長くなる',
+  en: {
+    title: 'Why Is Arctic Ice Shrinking?',
+    lead: 'The pattern is simple: warming rises, the Arctic heats faster, and sea ice declines even more.',
+    mechanismSteps: [
+      {
+        title: 'Greenhouse Gases Increase',
+        body: 'As CO2 and methane rise, more heat is trapped near Earth, and temperatures go up.',
+      },
+      {
+        title: 'The Arctic Warms Faster',
+        body: 'The Arctic often warms 2 to 4 times faster than the global average. This is called Arctic amplification.',
+      },
+      {
+        title: 'Less Ice, More Warming',
+        body: 'White ice reflects sunlight, while dark ocean absorbs heat. Less ice means stronger warming feedback.',
+      },
+    ],
+    resultTitle: 'Change in Numbers',
+    results: [
+      { value: 'About 40%', label: 'Summer sea ice area decline vs. 1979' },
+      { value: '+1 month+', label: 'Longer ice-free period' },
+      { value: '2-4x', label: 'Faster warming than the global average' },
+    ],
+    feedbackTitle: 'Feedback Loop: Less Ice, More Warming',
+    feedbackAlt: 'How less ice leads to more warming',
   },
-  {
-    icon: <Brightness7 />,
-    value: '2〜4倍',
-    label: '地球平均より速いペースで暖まる',
+  zh: {
+    title: '为什么北极海冰在减少？',
+    lead: '逻辑很清楚：全球变暖加剧，北极升温更快，海冰进一步减少。',
+    mechanismSteps: [
+      {
+        title: '温室气体增加',
+        body: '当CO2和甲烷增加时，地球更容易留住热量，气温随之上升。',
+      },
+      {
+        title: '北极升温更快',
+        body: '北极升温速度常常是全球平均的2到4倍，这被称为北极放大效应。',
+      },
+      {
+        title: '冰越少，升温越快',
+        body: '白色冰面会反射阳光，海水会吸热。海冰减少会让升温反馈更强。',
+      },
+    ],
+    resultTitle: '用数据看变化',
+    results: [
+      { value: '约40%', label: '与1979年相比夏季海冰面积下降' },
+      { value: '超过1个月', label: '无冰期延长' },
+      { value: '2到4倍', label: '升温速度快于全球平均' },
+    ],
+    feedbackTitle: '海冰减少带来的升温循环',
+    feedbackAlt: '海冰减少如何加速升温',
   },
-]
+}
 
 export default function ClimateSection() {
+  const pathname = usePathname()
+  const locale = getLocaleFromPathname(pathname)
+  const text = climateText[locale]
+
   return (
     <Box component="section" id="climate" sx={styles.climateSection}>
       <Container maxWidth="lg">
         <Stack spacing={3} sx={styles.climateIntro}>
           <Typography variant="h2" sx={styles.climateTitle}>
-            なぜ北極の氷は減るのか
+            {text.title}
           </Typography>
           <Typography sx={styles.climateLead}>
-            地球温暖化の仕組みと、北極で影響が大きくなりやすい理由をやさしく紹介します。
+            {text.lead}
           </Typography>
         </Stack>
 
         <Box sx={styles.climateMechanismGrid}>
-          {mechanismSteps.map((item) => (
-            <Card key={item.step} sx={styles.climateMechanismCard}>
+          {text.mechanismSteps.map((item, index) => (
+            <Card key={mechanismIcons[index].step} sx={styles.climateMechanismCard}>
               <CardContent sx={styles.climateMechanismCardContent}>
                 <Stack spacing={2.5}>
                   <Stack direction="row" spacing={2} alignItems="center">
-                    <Box sx={item.iconBg}>{item.icon}</Box>
-                    <Typography sx={styles.climateStepNumber}>{item.step}</Typography>
+                    <Box sx={mechanismIcons[index].iconBg}>{mechanismIcons[index].icon}</Box>
+                    <Typography sx={styles.climateStepNumber}>{mechanismIcons[index].step}</Typography>
                   </Stack>
                   <Typography variant="h3" sx={styles.climateMechanismTitle}>
                     {item.title}
@@ -89,12 +163,12 @@ export default function ClimateSection() {
 
         <Box sx={styles.climateResultSection}>
           <Typography variant="h3" sx={styles.climateResultTitle}>
-            北極で起きていること
+            {text.resultTitle}
           </Typography>
           <Box sx={styles.climateResultGrid}>
-            {resultCards.map((card) => (
+            {text.results.map((card, index) => (
               <Box key={card.label} sx={styles.climateResultCard}>
-                <Box sx={styles.climateResultIconBox}>{card.icon}</Box>
+                <Box sx={styles.climateResultIconBox}>{resultIcons[index]}</Box>
                 <Typography variant="h4" sx={styles.climateResultValue}>
                   {card.value}
                 </Typography>
@@ -105,17 +179,16 @@ export default function ClimateSection() {
         </Box>
 
         <Box sx={styles.climateFeedbackDiagram}>
-          <Typography sx={styles.climateFeedbackTitle}>氷が減るほど暖まりやすくなる仕組み</Typography>
+          <Typography sx={styles.climateFeedbackTitle}>{text.feedbackTitle}</Typography>
           <Box sx={styles.climateFeedbackImageContainer}>
             <Image
               src="/images/feedback.png"
-              alt="氷が減るほど暖まりやすくなるしくみ"
+              alt={text.feedbackAlt}
               fill
               sizes="(min-width:  600px) 600px, 100vw"
               style={{ objectFit: 'contain' }}
             />
           </Box>
-
         </Box>
       </Container>
     </Box>

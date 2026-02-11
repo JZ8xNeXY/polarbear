@@ -1,42 +1,83 @@
 'use client'
 
 import { Box, Button, Card, CardContent, Container, Stack, Typography } from '@mui/material'
+import { usePathname } from 'next/navigation'
 import styles from '@/app/page.style'
+import { getLocaleFromPathname, type Locale } from '@/lib/locale'
 
-const highlights = [
-  {
-    title: '北極の変化を伝える',
-    body: '海氷の減少や生態の変化を、だれでも理解しやすい形で発信しています。',
+type PbiText = {
+  title: string
+  lead: string
+  body: string
+  highlights: Array<{ title: string; body: string }>
+  note: string
+  primaryCta: string
+  secondaryCta: string
+}
+
+const pbiText: Record<Locale, PbiText> = {
+  ja: {
+    title: 'PBIの活動をのぞいてみよう',
+    lead: 'PBI（Polar Bears International）は、ホッキョクグマ保護に特化した国際団体です。北極の変化を伝え、行動につながる機会をつくっています。',
+    body: '公式サイトでは活動内容や支援方法を確認できます。まずは、どんな取り組みがあるか見てみましょう。',
+    highlights: [
+      { title: '北極の変化を伝える', body: '海氷や生態の変化を、わかりやすく発信しています。' },
+      { title: '学びの機会をつくる', body: '教育プログラムやイベントを通して、行動につながる学びを広げています。' },
+      { title: '現地とつながる', body: '研究者や地域の人たちと連携し、北極の今を共有しています。' },
+    ],
+    note: 'はじめての方にもわかりやすくまとまっています。',
+    primaryCta: 'PBI公式サイトへ',
+    secondaryCta: '支援方法を見る',
   },
-  {
-    title: '学びの機会をつくる',
-    body: '教育プログラムやイベントを通して、身近な行動につながる学びを広げています。',
+  en: {
+    title: 'Explore PBI',
+    lead: 'PBI (Polar Bears International) is a global organization focused on polar bear conservation and practical education.',
+    body: 'Their website explains current work and ways to support. Start by checking their projects.',
+    highlights: [
+      { title: 'Communicate Arctic Change', body: 'They share sea-ice and ecosystem changes in an easy-to-understand format.' },
+      { title: 'Create Learning Opportunities', body: 'Programs and events help people turn knowledge into action.' },
+      { title: 'Connect with Local Voices', body: 'They work with researchers and communities to share real Arctic updates.' },
+    ],
+    note: 'A clear starting point for first-time visitors.',
+    primaryCta: 'Visit PBI',
+    secondaryCta: 'See Ways to Support',
   },
-  {
-    title: '現地とつながる',
-    body: '研究者や地域の人びとと連携し、北極のいまを共有しています。',
+  zh: {
+    title: '了解 PBI 的行动',
+    lead: 'PBI（Polar Bears International）是专注于北极熊保护的国际组织，持续推动传播与行动教育。',
+    body: '在官网可以看到他们的项目和支持方式。先从了解他们正在做什么开始。',
+    highlights: [
+      { title: '传播北极变化', body: '用易懂方式介绍海冰和生态变化。' },
+      { title: '提供学习机会', body: '通过课程和活动，把认知转化为行动。' },
+      { title: '连接当地与研究者', body: '与研究团队和社区合作，分享北极一线信息。' },
+    ],
+    note: '对初次了解的人也很友好。',
+    primaryCta: '访问 PBI 官网',
+    secondaryCta: '查看支持方式',
   },
-]
+}
 
 export default function PbiSection() {
+  const pathname = usePathname()
+  const locale = getLocaleFromPathname(pathname)
+  const text = pbiText[locale]
+
   return (
     <Box component="section" id="pbi" sx={styles.pbiSection}>
       <Container maxWidth="lg">
         <Stack spacing={3} sx={styles.pbiHeader}>
           <Typography variant="h2" sx={styles.pbiTitle}>
-            Polar Bears International を応援しよう
+            {text.title}
           </Typography>
           <Typography sx={styles.pbiLead} align="center">
-            PBI（Polar Bears International）は、ホッキョクグマを守ることに特化した国際団体です。
-            北極の変化を伝え、学びや行動につながるきっかけを届けています。
+            {text.lead}
           </Typography>
           <Typography sx={styles.pbiBody} align="center">
-            寄付などの支援も受け付けており、北極の現状を伝える活動や学びの機会づくりを
-            ひろげています。保護の輪を広げるために、あなたの力を貸してください。
+            {text.body}
           </Typography>
         </Stack>
         <Box sx={styles.pbiGrid}>
-          {highlights.map((item) => (
+          {text.highlights.map((item) => (
             <Card key={item.title} sx={styles.pbiCard}>
               <CardContent>
                 <Stack spacing={1.5}>
@@ -50,7 +91,7 @@ export default function PbiSection() {
           ))}
         </Box>
         <Typography sx={styles.pbiNote}>
-          まずは公式サイトで活動内容をチェックしてみてください。
+          {text.note}
         </Typography>
         <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="center" sx={styles.pbiCta}>
           <Button
@@ -61,7 +102,7 @@ export default function PbiSection() {
             size="large"
             sx={styles.pbiButton}
           >
-            公式サイトへ
+            {text.primaryCta}
           </Button>
           <Button
             href="https://polarbearsinternational.org/"
@@ -71,7 +112,7 @@ export default function PbiSection() {
             size="large"
             sx={styles.pbiSecondaryButton}
           >
-            寄付について見る
+            {text.secondaryCta}
           </Button>
         </Stack>
       </Container>

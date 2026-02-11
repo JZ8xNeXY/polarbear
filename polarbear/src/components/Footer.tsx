@@ -1,8 +1,18 @@
 'use client'
 
 import { Box, Container, Typography } from '@mui/material'
+import { usePathname } from 'next/navigation'
+import { getLocaleFromPathname, type Locale } from '@/lib/locale'
+
+const footerNames: Record<Locale, string> = {
+  ja: 'ホッキョクグマを守ろう',
+  en: 'Save Polar Bears',
+  zh: '守护北极熊',
+}
 
 export default function Footer() {
+  const pathname = usePathname()
+  const locale = getLocaleFromPathname(pathname)
   return (
     <Box
       component="footer"
@@ -21,7 +31,7 @@ export default function Footer() {
     >
       <Container maxWidth="lg">
         <Typography variant="body2" align="center">
-          © {new Date().getFullYear()} ホッキョクグマを守ろう
+          © {new Date().getFullYear()} {footerNames[locale]}
         </Typography>
       </Container>
     </Box>
