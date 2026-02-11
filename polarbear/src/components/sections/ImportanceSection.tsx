@@ -1,6 +1,6 @@
 'use client'
 
-import { AccessTime, FlashOn, Public, Thermostat } from '@mui/icons-material'
+import { AccessTime, Public, Thermostat } from '@mui/icons-material'
 import { Box, Card, CardContent, Container, Stack, Typography } from '@mui/material'
 import { usePathname } from 'next/navigation'
 import styles from '@/app/page.style'
@@ -19,14 +19,14 @@ type ImportanceText = {
 
 const importanceText: Record<Locale, ImportanceText> = {
   ja: {
-    title: '守る理由はシンプルです',
-    item1Title: '変化を最初に受ける',
-    item1Body: '海氷の変化が、そのまま暮らしに直結します。',
+    title: '守る理由',
+    item1Title: '変化の影響を受けやすい',
+    item1Body: '海氷の変化は、暮らしや体調に大きく関わります。',
     item2TitleLine1: '北極の変化は',
-    item2TitleLine2: '世界につながる',
-    item2Body: '氷が減ると反射が弱まり、地球はさらに暖まりやすくなります。',
-    item3Title: '小さな行動が広がる',
-    item3Body: '知る人が増えるほど、支える動きは大きくなります。',
+    item2TitleLine2: '世界にもつながる',
+    item2Body: '氷が減ると地表で反射される光が減り、地球が暖まりやすくなると考えられています。',
+    item3Title: '小さな行動が支えになる',
+    item3Body: '知る人が少しずつ増えることで、保護を支える動きも広がっていきます。',
   },
   en: {
     title: 'Why It Matters',
@@ -61,7 +61,6 @@ export default function ImportanceSection() {
         <Card sx={styles.importanceCard}>
           <CardContent sx={styles.importanceCardContent}>
             <Stack spacing={4} alignItems="center" textAlign="center">
-              <FlashOn sx={styles.importanceIcon} />
               <Typography variant="h2" sx={styles.importanceTitle}>
                 {text.title}
               </Typography>

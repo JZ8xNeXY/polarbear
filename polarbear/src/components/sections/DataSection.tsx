@@ -25,13 +25,13 @@ type DataText = {
 const dataText: Record<Locale, DataText> = {
   ja: {
     title: 'データで見る北極',
-    lead: '全体の傾向と地域差を分けると、変化がぐっと見えやすくなります。',
+    lead: '全体の傾向と地域ごとの差を分けて見ると、変化をつかみやすくなります。',
     statPopulationValue: '約26,000頭',
     statIceValue: '+1か月',
-    statPopulationLabel: '個体数の傾向は地域ごとに異なります。',
-    statIceLabel: '海氷のない期間が長いほど、体力や子育ての負担が増えます。',
+    statPopulationLabel: '個体数の傾向は、地域によって違いがあります。',
+    statIceLabel: '海氷のない期間が長くなるほど、体力や子育てへの負担が大きくなるとされています。',
     mapTitle: '生息域マップ',
-    mapLead: 'ホッキョクグマは北極圏の5カ国に分布し、19の個体群に分かれて暮らしています。',
+    mapLead: 'ホッキョクグマは北極圏の5カ国に分布し、19の個体群に分かれて生息しています。',
     mapCaption: '※ 地図出典: WWF Global Arctic Programme (2025)',
     populationAlt: '親子のホッキョクグマ',
     iceAlt: '海氷の縮小イメージ',

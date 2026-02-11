@@ -29,8 +29,8 @@ type ActionText = {
 
 const actionText: Record<Locale, ActionText> = {
   ja: {
-    title: '今日からできること',
-    lead: '完璧でなくて大丈夫。続けやすい一歩を選ぶことが、いちばん大切です。',
+    title: '私たちにできること',
+    lead: '完璧を目指さなくても大丈夫です。続けられる小さな一歩が、長い目で見ると力になります。',
     items: [
       {
         title: '使うエネルギーを見直す',
@@ -41,7 +41,7 @@ const actionText: Record<Locale, ActionText> = {
         body: '調査や保全は継続が大切です。\n信頼できる団体を、無理のない範囲で応援できます。',
       },
       {
-        title: '身近な人にシェアする',
+        title: '身近な人に共有する',
         body: '「海氷は狩りの足場」という一言だけでも、行動のきっかけになります。',
       },
       {

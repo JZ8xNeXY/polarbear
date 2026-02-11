@@ -19,11 +19,11 @@ type HeroText = {
 const heroText: Record<Locale, HeroText> = {
   ja: {
     chip: 'はじめての方へ',
-    titleLine1: 'ホッキョクグマの今を知って',
-    titleLine2: 'できることから始めよう',
-    lead: '海氷は、ホッキョクグマの大切な足場です。氷の季節が短くなると、狩りや子育てがむずかしくなります。',
-    primaryCta: 'いまの北極を見る',
-    secondaryCta: '行動アイデアを見る',
+    titleLine1: 'ホッキョクグマの今を知る',
+    titleLine2: '小さな一歩につなげる',
+    lead: '海氷は、ホッキョクグマにとって大切な足場です。氷の季節が短くなると、狩りや子育てへの負担が大きくなると報告されています。',
+    primaryCta: '北極の現状を見る',
+    secondaryCta: '私たちにできることを見る',
   },
   en: {
     chip: 'For New Visitors',
@@ -47,7 +47,8 @@ export default function HeroSection() {
   const pathname = usePathname()
   const locale = getLocaleFromPathname(pathname)
   const text = heroText[locale]
-  const homePath = withLocale('/', locale)
+  const learnPath = withLocale('/learn', locale)
+  const supportPath = withLocale('/support', locale)
 
   return (
     <Box component="section" sx={styles.heroSection}>
@@ -78,7 +79,7 @@ export default function HeroSection() {
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={styles.heroButtons}>
             <Button
-              href={`${homePath}#threats`}
+              href={learnPath}
               variant="contained"
               size="large"
               endIcon={<KeyboardArrowDown />}
@@ -88,7 +89,7 @@ export default function HeroSection() {
               {text.primaryCta}
             </Button>
             <Button
-              href={`${homePath}#action`}
+              href={supportPath}
               variant="outlined"
               size="large"
               sx={styles.heroSecondaryButton}

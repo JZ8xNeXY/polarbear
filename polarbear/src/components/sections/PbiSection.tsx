@@ -17,17 +17,17 @@ type PbiText = {
 
 const pbiText: Record<Locale, PbiText> = {
   ja: {
-    title: 'PBIの活動をのぞいてみよう',
-    lead: 'PBI（Polar Bears International）は、ホッキョクグマ保護に特化した国際団体です。北極の変化を伝え、行動につながる機会をつくっています。',
-    body: '公式サイトでは活動内容や支援方法を確認できます。まずは、どんな取り組みがあるか見てみましょう。',
+    title: 'PBIの活動を知る',
+    lead: 'PBI（Polar Bears International）は、ホッキョクグマ保護に取り組む国際団体です。北極の変化を伝え、行動につながる学びの場を広げています。',
+    body: '公式サイトでは活動内容や支援方法を確認できます。関心のあるテーマからご覧ください。',
     highlights: [
       { title: '北極の変化を伝える', body: '海氷や生態の変化を、わかりやすく発信しています。' },
       { title: '学びの機会をつくる', body: '教育プログラムやイベントを通して、行動につながる学びを広げています。' },
-      { title: '現地とつながる', body: '研究者や地域の人たちと連携し、北極の今を共有しています。' },
+      { title: '現地の声とつながる', body: '研究者や地域の人たちと連携し、北極の今を共有しています。' },
     ],
-    note: 'はじめての方にもわかりやすくまとまっています。',
-    primaryCta: 'PBI公式サイトへ',
-    secondaryCta: '支援方法を見る',
+    note: '初めての方にも読みやすい内容です。',
+    primaryCta: 'PBI公式サイトを見る',
+    secondaryCta: '支援方法を確認する',
   },
   en: {
     title: 'Explore PBI',

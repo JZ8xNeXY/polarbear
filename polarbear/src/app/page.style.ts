@@ -1037,6 +1037,223 @@ const styles: Record<string, SxProps<Theme>> = {
     color: '#2f4257',
     lineHeight: 1.8,
   },
+  articlePageRoot: {
+    py: { xs: 10, md: 14 },
+    minHeight: '100vh',
+    background:
+      'linear-gradient(180deg, var(--bg-section-paper) 0%, var(--bg-section-frost) 54%, var(--bg-section-base) 100%)',
+  },
+  articleHeader: {
+    textAlign: 'center',
+    mb: 5,
+  },
+  articleTitle: {
+    fontSize: { xs: '2.2rem', md: '3rem' },
+  },
+  articleLead: {
+    color: '#2f4257',
+    maxWidth: 780,
+    mx: 'auto',
+  },
+  articleGrid: {
+    display: 'grid',
+    gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
+    gap: 3,
+  },
+  articleCard: {
+    borderRadius: 5,
+    border: '1px solid var(--glass-border)',
+    boxShadow: 'var(--glass-shadow)',
+    bgcolor: '#ffffff',
+    height: '100%',
+  },
+  articleComingCard: {
+    maxWidth: 760,
+    mx: 'auto',
+    borderRadius: 5,
+    border: '1px solid rgba(47,143,212,0.24)',
+    boxShadow: 'var(--glass-shadow)',
+    bgcolor: 'rgba(255,255,255,0.94)',
+  },
+  articleCardContent: {
+    p: { xs: 3, md: 4 },
+  },
+  articleMetaRow: {
+    flexWrap: 'wrap',
+  },
+  articleMetaChip: {
+    bgcolor: 'rgba(124,214,255,0.18)',
+    color: '#1f4d70',
+    border: '1px solid rgba(47,143,212,0.24)',
+    fontWeight: 600,
+  },
+  articleCardTitle: {
+    fontSize: { xs: '1.25rem', md: '1.5rem' },
+    lineHeight: 1.4,
+    color: '#0b1b2b',
+  },
+  articleCardExcerpt: {
+    color: '#304357',
+    lineHeight: 1.75,
+  },
+  articleReadButton: {
+    alignSelf: 'flex-start',
+    textTransform: 'none',
+    fontWeight: 700,
+    px: 2.5,
+  },
+  articleDetailTop: {
+    mb: 3.5,
+  },
+  articleBackButton: {
+    alignSelf: 'flex-start',
+    px: 0,
+    textTransform: 'none',
+    color: '#2f6f9f',
+    fontWeight: 700,
+    '&:hover': { bgcolor: 'transparent', textDecoration: 'underline' },
+  },
+  articleDetailTitle: {
+    fontSize: { xs: '2rem', md: '2.7rem' },
+    lineHeight: 1.25,
+  },
+  articleDetailExcerpt: {
+    color: '#2f4257',
+    fontSize: { xs: '1rem', md: '1.05rem' },
+    lineHeight: 1.8,
+  },
+  articleSummaryCard: {
+    mb: 2.5,
+    borderRadius: 5,
+    border: '1px solid rgba(47,143,212,0.24)',
+    boxShadow: '0 10px 26px rgba(12,34,60,0.08)',
+    bgcolor: 'rgba(247,251,255,0.92)',
+  },
+  articleSummaryList: {
+    pl: 2.5,
+    m: 0,
+    '& li': { mb: 0.6 },
+    '& li:last-of-type': { mb: 0 },
+  },
+  articleBodyStack: {
+    mb: 2.5,
+  },
+  articleSectionCard: {
+    borderRadius: 5,
+    border: '1px solid var(--glass-border)',
+    boxShadow: '0 10px 24px rgba(12,34,60,0.08)',
+    bgcolor: '#ffffff',
+  },
+  articleSectionTitle: {
+    fontSize: { xs: '1.2rem', md: '1.35rem' },
+    color: '#0b1b2b',
+  },
+  articleSectionBody: {
+    color: '#304357',
+    lineHeight: 1.8,
+  },
+  articleActionCard: {
+    mb: 2.5,
+    borderRadius: 5,
+    border: '1px solid rgba(76,175,80,0.24)',
+    boxShadow: '0 10px 24px rgba(76,175,80,0.08)',
+    bgcolor: 'rgba(243,251,245,0.92)',
+  },
+  articleSourceCard: {
+    borderRadius: 5,
+    border: '1px solid rgba(47,143,212,0.24)',
+    boxShadow: '0 10px 24px rgba(12,34,60,0.08)',
+    bgcolor: '#ffffff',
+  },
+  articleSourceMeta: {
+    color: '#5a758f',
+    fontSize: '0.9rem',
+  },
+  articleSourceNote: {
+    color: '#4a647f',
+    fontSize: '0.92rem',
+    lineHeight: 1.7,
+  },
+  articleSourceButton: {
+    alignSelf: 'flex-start',
+    textTransform: 'none',
+    fontWeight: 700,
+    px: 2.5,
+  },
+  homeHubSection: {
+    py: { xs: 9, md: 12 },
+    position: 'relative',
+    background:
+      'linear-gradient(180deg, var(--bg-section-frost) 0%, var(--bg-section-paper) 56%, var(--bg-section-base) 100%)',
+    boxShadow:
+      'inset 0 1px 0 rgba(255,255,255,0.82), inset 0 -1px 0 rgba(12,34,60,0.08)',
+  },
+  homeHubHeader: {
+    textAlign: 'center',
+    mb: 5,
+  },
+  homeHubTitle: {
+    fontSize: { xs: '2rem', md: '2.6rem' },
+  },
+  homeHubLead: {
+    color: '#2f4257',
+    maxWidth: 720,
+    mx: 'auto',
+  },
+  homeHubGrid: {
+    display: 'grid',
+    gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
+    gap: 3,
+  },
+  homeHubCard: {
+    borderRadius: 5,
+    border: '1px solid var(--glass-border)',
+    boxShadow: 'var(--glass-shadow)',
+    bgcolor: '#ffffff',
+    height: '100%',
+  },
+  homeHubCardContent: {
+    p: { xs: 3, md: 3.5 },
+  },
+  homeHubIconBox: {
+    width: 54,
+    height: 54,
+    borderRadius: '16px',
+    display: 'grid',
+    placeItems: 'center',
+    bgcolor: 'rgba(124,214,255,0.18)',
+    border: '1px solid rgba(47,143,212,0.24)',
+    '& svg': {
+      color: '#2f6f9f',
+      fontSize: 28,
+    },
+  },
+  homeHubCardTitle: {
+    fontSize: { xs: '1.2rem', md: '1.35rem' },
+    color: '#0b1b2b',
+  },
+  homeHubCardBody: {
+    color: '#304357',
+    lineHeight: 1.75,
+  },
+  homeHubButton: {
+    alignSelf: 'flex-start',
+    textTransform: 'none',
+    fontWeight: 700,
+    px: 2.5,
+  },
+  homeHubContactCta: {
+    mt: 4,
+    alignItems: 'center',
+  },
+  homeHubContactButton: {
+    textTransform: 'none',
+    fontWeight: 700,
+    px: 3,
+    py: 1.2,
+    bgcolor: '#2f8fd4',
+    '&:hover': { bgcolor: '#4c9fd9' },
+  },
 }
 
 export default styles

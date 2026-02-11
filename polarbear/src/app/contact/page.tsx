@@ -16,7 +16,7 @@ type ContactText = {
 const contactText: Record<Locale, ContactText> = {
   ja: {
     title: 'お問い合わせ',
-    lead: '質問や情報交換のメッセージを歓迎しています。気軽にお送りください。',
+    lead: 'ご質問やご感想をお待ちしています。お気軽にご連絡ください。',
     iframeTitle: 'お問い合わせフォーム',
   },
   en: {
