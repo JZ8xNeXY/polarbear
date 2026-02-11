@@ -1021,6 +1021,60 @@ const styles: Record<string, SxProps<Theme>> = {
       to: { transform: 'rotate(360deg)' },
     },
   },
+  contactPageRoot: {
+    py: { xs: 10, md: 14 },
+    minHeight: '100vh',
+    background: 'linear-gradient(180deg, rgba(240,248,255,0.75) 0%, rgba(255,255,255,0.95) 100%)',
+    boxShadow:
+      'inset 0 1px 0 rgba(255,255,255,0.8), inset 0 -1px 0 rgba(12,34,60,0.08)',
+  },
+  contactHeader: {
+    textAlign: 'center',
+    mb: 5,
+  },
+  contactTitle: {
+    fontSize: { xs: '2.2rem', md: '3rem' },
+  },
+  contactLead: {
+    color: '#2f4257',
+  },
+  contactFrameWrap: {
+    borderRadius: 5,
+    overflow: 'hidden',
+    border: '1px solid var(--glass-border)',
+    boxShadow: 'var(--glass-shadow)',
+    bgcolor: '#ffffff',
+  },
+  contactFrame: {
+    width: '100%',
+    height: { xs: 1300, md: 1601 },
+    border: 0,
+  },
+  legalPageRoot: {
+    py: { xs: 10, md: 14 },
+    minHeight: '100vh',
+    background: 'linear-gradient(180deg, rgba(240,248,255,0.75) 0%, rgba(255,255,255,0.95) 100%)',
+  },
+  legalCard: {
+    borderRadius: 6,
+    border: '1px solid var(--glass-border)',
+    boxShadow: 'var(--glass-shadow)',
+    bgcolor: '#ffffff',
+    p: { xs: 3, md: 5 },
+  },
+  legalTitle: {
+    fontSize: { xs: '2.2rem', md: '3rem' },
+    textAlign: 'center',
+    mb: 4,
+  },
+  legalSectionTitle: {
+    fontSize: { xs: '1.2rem', md: '1.4rem' },
+    fontWeight: 700,
+  },
+  legalBody: {
+    color: '#2f4257',
+    lineHeight: 1.8,
+  },
 }
 
 export default styles

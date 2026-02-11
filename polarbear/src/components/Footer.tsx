@@ -14,16 +14,14 @@ export default function Footer() {
         right: 0,
         bottom: 0,
         zIndex: 1000,
-        py: { xs: 2.5, md: 3 },
-        minHeight: { xs: 92, md: 104 },
+        py: { xs: 1, md: 1 },
+        pb: 0,
+        minHeight: { xs: 40, md: 44 },
       }}
     >
       <Container maxWidth="lg">
         <Typography variant="body2" align="center">
           © {new Date().getFullYear()} ホッキョクグマを守ろう
-        </Typography>
-        <Typography variant="body2" align="center" sx={{ mt: 1 }}>
-          このサイトはホッキョクグマを守るための情報をまとめています
         </Typography>
       </Container>
     </Box>

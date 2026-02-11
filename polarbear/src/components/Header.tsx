@@ -24,6 +24,9 @@ export default function Header() {
     { label: '基本を知る', href: '#about' },
     { label: 'いまのこと', href: '#threats' },
     { label: 'できること', href: '#action' },
+    { label: 'お問い合わせ', href: '/contact' },
+    { label: '利用規約', href: '/terms' },
+    { label: 'サービスポリシー', href: '/policy' },
   ]
 
   const handleMenuToggle = () => {
@@ -47,7 +50,12 @@ export default function Header() {
         }}
       >
         <Toolbar sx={{ minHeight: { xs: 64, md: 72 } }}>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: 700 }}>
+          <Typography
+            variant="h6"
+            component="a"
+            href="/"
+            sx={{ flexGrow: 1, fontWeight: 700, color: 'inherit' }}
+          >
             ホッキョクグマを守ろう
           </Typography>
           <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 2 }}>
